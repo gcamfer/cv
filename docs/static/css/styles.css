@@ -1,0 +1,229 @@
+/**
+ * Custom Styles for CV Website
+ * Extends Tailwind CSS with custom styles and animations
+ */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Active navigation link */
+.nav-link.text-primary {
+    position: relative;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Hover effects for cards */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+/* Progress bar animations */
+@keyframes progressBar {
+    from {
+        width: 0;
+    }
+}
+
+.progress-bar {
+    animation: progressBar 1s ease-out;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    .shadow-md, .shadow-lg, .shadow-xl {
+        box-shadow: none !important;
+    }
+    
+    a[href]:after {
+        content: none !important;
+    }
+    
+    .bg-gradient-to-r {
+        background: #2563eb !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+/* Collapsible sections */
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.collapsible-content.active {
+    max-height: 2000px;
+    transition: max-height 0.5s ease-in;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Badge animations */
+.badge-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .8;
+    }
+}
+
+/* Link hover effects */
+a {
+    transition: all 0.2s ease;
+}
+
+/* Button styles */
+button, .btn {
+    transition: all 0.2s ease;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    h3 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Loading animation for PDF generation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Skill level bars animation */
+.skill-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        left: 100%;
+    }
+}
+
+/* Section spacing for better readability */
+section {
+    scroll-margin-top: 80px;
+}
+
+/* Ensure proper text rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Focus styles for accessibility */
+a:focus, button:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Gradient text effect for headings */
+.gradient-text {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+

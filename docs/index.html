@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guillermo Caminero Fernández - ML Engineer | Production Systems & Pipeline Optimization - Professional CV and Portfolio">
+    <meta name="author" content="Guillermo Caminero Fernández">
+    <title>Guillermo Caminero Fernández - ML Engineer | Production Systems & Pipeline Optimization</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- PDF Generation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/styles.css">
+    
+    <!-- Print Styles -->
+    <style>
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .print-full-width {
+                width: 100% !important;
+                max-width: none !important;
+            }
+            body {
+                background: white !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 no-print">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Name/Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-primary hover:text-secondary transition">
+                        Guillermo Caminero Fernández
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="flex items-center space-x-6">
+                    <a href="index.html" 
+                       class="nav-link text-gray-700 hover:text-primary transition font-medium text-primary border-b-2 border-primary">
+                        CV
+                    </a>
+                    <a href="portfolio.html" 
+                       class="nav-link text-gray-700 hover:text-primary transition font-medium ">
+                        Portfolio
+                    </a>
+                    
+                    <!-- LinkedIn Link -->
+                    <a href="https://linkedin.com/in/guillermo-caminero-fernandez" 
+                       target="_blank"
+                       class="text-gray-700 hover:text-primary transition"
+                       title="LinkedIn Profile">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    
+                    <!-- Download PDF Button -->
+                    <button id="downloadPDF" 
+                            class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition shadow-md hover:shadow-lg">
+                        <svg class="inline w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="cv-content">
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold mb-4">Guillermo Caminero Fernández</h1>
+            <p class="text-2xl mb-6 text-blue-100">ML Engineer | Production Systems & Pipeline Optimization</p>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-lg">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                    </svg>
+                    Madrid, Spain
+                </div>
+                
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                    </svg>
+                    <a href="mailto:gcaminerof@gmail.com" class="hover:underline">gcaminerof@gmail.com</a>
+                </div>
+                
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    </svg>
+                    +34 653 579 976
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white rounded-lg shadow-md p-8">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">About Me</h2>
+        
+        <!-- Total Experience -->
+        <div class="mb-6 pb-4 border-b border-gray-200">
+            <p class="text-xl font-bold text-gray-900">
+                Total working experience: 7+ years
+            </p>
+        </div>
+        
+        <div class="prose max-w-none text-gray-700">
+            M.Sc. in Telecommunications Engineering with extensive experience in machine learning, computer vision, and NLP. <br>Started working mainly in natural language processing but developed a strong passion for computer vision, <br>leading to expertise in facial recognition, object detection, and image segmentation. Currently focused on <br>geospatial data science and maps analytics for ADAS features at TomTom.<br><br>Passionate about putting ML models into production and optimizing ETL pipelines to achieve the best throughput <br>while minimizing costs. Over the past 2 years, I have specialized in profiling and optimizing Python code to <br>reach the maximum potential of each workflow, ensuring efficient and scalable data processing systems.<br><br>Great passion for electronics, embedded systems (RaspberryPi, Arduino, FPGAs), cybersecurity, and pentesting. <br>Always looking for new challenges to reach full potential.<br>
+        </div>
+        <div class="mt-4 prose max-w-none text-gray-700">
+            <p class="italic">Support collaborator of the research team at the Communications Systems and Networks (SRC) Laboratory 
+at Universidad de Valladolid, working on the application of machine learning to intrusion detection in data networks.
+</p>
+        </div>
+    </div>
+</section>
+
+<!-- Work Experience Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800">Work Experience</h2>
+    
+    <div class="space-y-8">
+        <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">Senior Data Scientist</h3>
+                    <p class="text-xl text-primary font-semibold">TomTom</p>
+                    <p class="text-gray-600">Madrid, Spain</p>
+                </div>
+                <div class="text-gray-600 mt-2 md:mt-0 md:text-right">
+                    <p class="font-medium">Jul 2022 - Present</p>
+                    <p class="text-sm text-gray-500">3 yrs 4 mos</p>
+                </div>
+            </div>
+            
+            <div class="text-gray-700 mb-4 whitespace-pre-line">Maps Analytics:
+- Developing metrics to analyse the quality of maps for ADAS attributes
+- Stakeholder orientation to focus data-driven efforts
+- Extraction of ADAS features from sensors using ML
+- Geospatial data science
+
+MLOPS:
+- Productivization of ML models in Databricks
+- ETL Load Optimization for lidar data and images into delta lake
+</div>
+            
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    PySpark
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Python
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Databricks
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Geospatial Data Science
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    ADAS
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    MLOps
+                </span>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">Senior Data Scientist</h3>
+                    <p class="text-xl text-primary font-semibold">Telefónica</p>
+                    <p class="text-gray-600">Madrid, Spain</p>
+                </div>
+                <div class="text-gray-600 mt-2 md:mt-0 md:text-right">
+                    <p class="font-medium">Aug 2020 - Jul 2022</p>
+                    <p class="text-sm text-gray-500">1 yr 11 mos</p>
+                </div>
+            </div>
+            
+            <div class="text-gray-700 mb-4 whitespace-pre-line">Main projects:
+- Sport analytics for first division football team
+- Data science professor (internal training)
+- Segmentation and classification of aerial drone imagery for defect detection
+- Time series forecasting
+- EDA and KPI visualizations in Spotfire for non-profit foundation
+- Auto EDA and auto ML tool for internal use
+- Research on facial recognition system for video door entry systems, proof of life and detecting onboarding frauds
+</div>
+            
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Python
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    PySpark
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    TensorFlow
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Plotly
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Dash
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    OpenCV
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Spotfire
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Docker
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    MySQL
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    FastAPI
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    FFmpeg
+                </span>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">NLP/NLU Analyst</h3>
+                    <p class="text-xl text-primary font-semibold">Minsait (Indra)</p>
+                    <p class="text-gray-600">Madrid, Spain</p>
+                </div>
+                <div class="text-gray-600 mt-2 md:mt-0 md:text-right">
+                    <p class="font-medium">Aug 2018 - Aug 2020</p>
+                    <p class="text-sm text-gray-500">2 yrs</p>
+                </div>
+            </div>
+            
+            <div class="text-gray-700 mb-4 whitespace-pre-line">Document management department:
+- Metadata extraction from banking and legal documents, email information
+- Text classification & sentiment analysis
+- Computer vision: Object detection (signatures, stamps, brands, logos)
+- OCR image preprocessing
+- REST services development (Flask, Spring Boot)
+</div>
+            
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Java
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Python
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Flask
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    TensorFlow
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Keras
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    NLTK
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Spacy
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Regular Expressions
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Tesseract
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Abbyy FineReader
+                </span>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">Extracurricular Internships in Research Group</h3>
+                    <p class="text-xl text-primary font-semibold">GIR de Electrónica (Universidad de Valladolid)</p>
+                    <p class="text-gray-600">Valladolid, Spain</p>
+                </div>
+                <div class="text-gray-600 mt-2 md:mt-0 md:text-right">
+                    <p class="font-medium">Apr 2016 - May 2016</p>
+                    <p class="text-sm text-gray-500">1 mo</p>
+                </div>
+            </div>
+            
+            <div class="text-gray-700 mb-4 whitespace-pre-line">- Electronic design of a system capable of performing the electrical-optical characterization of laser diodes
+- Manufacture and assembly of the system developed on printed circuit board (PCB)
+</div>
+            
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    PCB Design
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Electronic Design
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Laser Characterization
+                </span>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">Internships</h3>
+                    <p class="text-xl text-primary font-semibold">GIR de Electrónica (Universidad de Valladolid)</p>
+                    <p class="text-gray-600">Valladolid, Spain</p>
+                </div>
+                <div class="text-gray-600 mt-2 md:mt-0 md:text-right">
+                    <p class="font-medium">Feb 2016 - Apr 2016</p>
+                    <p class="text-sm text-gray-500">2 mos</p>
+                </div>
+            </div>
+            
+            <div class="text-gray-700 mb-4 whitespace-pre-line">- Reverse engineering of the Spectra Pro 300i monochromator
+</div>
+            
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Reverse Engineering
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Optical Systems
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800">Education</h2>
+    
+    <div class="space-y-6">
+        <div class="bg-white rounded-lg shadow-md p-8">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">Master in Telecommunication Engineering</h3>
+                    <p class="text-xl text-primary">Universidad de Valladolid</p>
+                    <p class="text-gray-600">Valladolid, Spain</p>
+                </div>
+                <div class="text-gray-600 mt-2 md:mt-0 md:text-right">
+                    <p class="font-medium">Oct 2016 - Jul 2018</p>
+                    <p class="text-sm">Grade: 8.213/10</p>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <h4 class="font-semibold text-gray-800 mb-2">Key Topics:</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li>Signal processing/analysis (Matlab and Python)</li>
+                    <li>Programming FPGAs (Verilog)</li>
+                    <li>Web development (HTML, CSS, Javascript, PHP, MySQL)</li>
+                </ul>
+            </div>
+            
+            <div class="mt-4 p-4 bg-gray-50 rounded">
+                <h4 class="font-semibold text-gray-800 mb-1">Thesis:</h4>
+                <p class="text-gray-700">Reinforcement learning as a reaction to network anomalies</p>
+                <a href="http://uvadoc.uva.es/handle/10324/33081" target="_blank" class="text-primary hover:underline text-sm">
+                    View Thesis →
+                </a>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-8">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">Degree in Engineering Specific Telecommunication Technologies</h3>
+                    <p class="text-lg text-gray-700 font-medium">Specialization: Electronic Systems</p>
+                    <p class="text-xl text-primary">Universidad de Valladolid</p>
+                    <p class="text-gray-600">Valladolid, Spain</p>
+                </div>
+                <div class="text-gray-600 mt-2 md:mt-0 md:text-right">
+                    <p class="font-medium">Sep 2013 - Jul 2016</p>
+                    <p class="text-sm">Grade: 7.0/10</p>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <h4 class="font-semibold text-gray-800 mb-2">Key Topics:</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li>PCB design (Proteus Design Suite)</li>
+                    <li>Electronic analysis & Electronic communications</li>
+                    <li>Electromagnetic compatibility</li>
+                    <li>Microcontroller programming (ARM7, PIC)</li>
+                    <li>Electronic communications protocols (UART, I2C, SPI, CAN, LIN, USB)</li>
+                    <li>Basic engineering concepts (physics, algebra, mathematics, statistics, programming)</li>
+                </ul>
+            </div>
+            
+            <div class="mt-4 p-4 bg-gray-50 rounded">
+                <h4 class="font-semibold text-gray-800 mb-1">Thesis:</h4>
+                <p class="text-gray-700">Design and manufacture of an electronic system for the optical characterization of laser diodes</p>
+                <a href="http://uvadoc.uva.es/handle/10324/20960" target="_blank" class="text-primary hover:underline text-sm">
+                    View Thesis →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800">Certifications</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-gray-800 flex-1">Fundamentals of MCP</h3>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Active</span>
+            </div>
+            
+            <p class="text-primary font-semibold mb-2">Hugging Face</p>
+            
+            <div class="text-gray-600 text-sm space-y-1">
+                <p>Issued: Jul 2025</p>
+                <p class="text-xs text-gray-500">Credential ID: guillesld</p>
+            </div>
+            
+            <a href="https://cas-bridge.xethub.hf.co/xet-bridge-us/682f5d0ff0af4dc8a20649c1/1d0a7b58197c2c9e5f650c55da35745d866bf1f6827df2637b2a96f3693753d0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251110%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251110T161515Z&X-Amz-Expires=3600&X-Amz-Signature=d188731f4d6b3ffa968d1c4ada24f33a484c83a65dcb400bafe74639b2f4cd95&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=6821d0b55c13d7676edd89c0&response-content-disposition=inline%3B+filename*%3DUTF-8%27%272025-07-09.png%3B+filename%3D%222025-07-09.png%22%3B&response-content-type=image%2Fpng&x-id=GetObject&Expires=1762794915&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2Mjc5NDkxNX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82ODJmNWQwZmYwYWY0ZGM4YTIwNjQ5YzEvMWQwYTdiNTgxOTdjMmM5ZTVmNjUwYzU1ZGEzNTc0NWQ4NjZiZjFmNjgyN2RmMjYzN2IyYTk2ZjM2OTM3NTNkMCoifV19&Signature=kGaBsbxqb2ZMAnAaxcbcgGet3jmQi2Urrr23XDopCLPYlk5J4k%7EY-eqOOHRW%7EkB2uOAy4LuXWzA5lNcdHE%7EvkfluD71XdkLMTC-ua4uExR2Gp%7E3uJo8zwaveb4yvMXtMkfOm3Nad-H38cw%7Epb%7EOr2E6uYibe8j0ZS3iOuXSMecTNuvu7WcQg5I6iSys7a34QxAF32sEp5eN3nqGnWYo0EbLqDuNyu9CNRp-XayY3w%7EnBZLgTQ7EPuGXhpbJS7oyeRhbSaLpS5hOUKhrggPKL6y9rPyqS4QcTN-m2r4ztrIKe5elgz%7E%7EpNcooRqL2nlZgfg1HLPp4i2%7EC4oeCgLS43A__&Key-Pair-Id=K2L8F4GPSG1IFC" target="_blank" 
+               class="mt-3 inline-block text-primary hover:underline text-sm font-medium">
+                View Credential →
+            </a>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-gray-800 flex-1">AI Agents Fundamentals</h3>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Active</span>
+            </div>
+            
+            <p class="text-primary font-semibold mb-2">Hugging Face</p>
+            
+            <div class="text-gray-600 text-sm space-y-1">
+                <p>Issued: Jun 2025</p>
+                <p class="text-xs text-gray-500">Credential ID: guillesld</p>
+            </div>
+            
+            <a href="https://cas-bridge.xethub.hf.co/xet-bridge-us/67a47037749ea2c4b9fafd4b/30af8b13963275491e80cc67aa22a87bdb456ef04d36365e0bdf6822cfcfb9b6?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251110%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251110T161441Z&X-Amz-Expires=3600&X-Amz-Signature=07d46cf6a5bbdffada23f35b615f9e0b1693bc0b92c5d1de080af99f1be1c82f&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=6821d0b55c13d7676edd89c0&response-content-disposition=inline%3B+filename*%3DUTF-8%27%272025-06-11.png%3B+filename%3D%222025-06-11.png%22%3B&response-content-type=image%2Fpng&x-id=GetObject&Expires=1762794881&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2Mjc5NDg4MX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82N2E0NzAzNzc0OWVhMmM0YjlmYWZkNGIvMzBhZjhiMTM5NjMyNzU0OTFlODBjYzY3YWEyMmE4N2JkYjQ1NmVmMDRkMzYzNjVlMGJkZjY4MjJjZmNmYjliNioifV19&Signature=WzJAoEXHp-eUZJD1HbqrrPuXH8BKWoSxXZXBTVFT4zpI6RmXQjwekFIsp1dDFIuJG9YnohYlRTMk-hM2rl57%7E9TXpO432XgnDbQy%7ElED5VBLV-PRpAA-9kxOIwdTnihKSwQGYccO6hdpZfuQnF34%7EStlaNfSaYLIghK6ZU9%7EBRR1wRY2-yRUEiV0oGaC1rORGLJHREFZH9eT3QiTpQzkNGbxfZw6e0fHJPkiLYqTOH3fh5tJoJnMzwNZpBdMZS%7Eqd7gAJP7cvy%7E%7EGzhb1mLknvwIIpxEw71ksHCs%7EPfA%7EW4jhXI8mMjya%7EjlHYxaal3Vat8GWMlVoVf3YVzkVX4rBA__&Key-Pair-Id=K2L8F4GPSG1IFC" target="_blank" 
+               class="mt-3 inline-block text-primary hover:underline text-sm font-medium">
+                View Credential →
+            </a>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-gray-800 flex-1">Databricks Certified Data Engineer Professional</h3>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Active</span>
+            </div>
+            
+            <p class="text-primary font-semibold mb-2">Databricks</p>
+            
+            <div class="text-gray-600 text-sm space-y-1">
+                <p>Issued: Mar 2025</p>
+                <p>Expires: Mar 2027</p>
+                <p class="text-xs text-gray-500">Credential ID: 135825906</p>
+            </div>
+            
+            <a href="https://credentials.databricks.com/176e9867-aa0e-4f75-bcb6-7df1573da4d3#acc.aXhCvpkt" target="_blank" 
+               class="mt-3 inline-block text-primary hover:underline text-sm font-medium">
+                View Credential →
+            </a>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-gray-800 flex-1">Databricks Certified Machine Learning Associate</h3>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Active</span>
+            </div>
+            
+            <p class="text-primary font-semibold mb-2">Databricks</p>
+            
+            <div class="text-gray-600 text-sm space-y-1">
+                <p>Issued: Dec 2024</p>
+                <p>Expires: Dec 2026</p>
+                <p class="text-xs text-gray-500">Credential ID: 126447074</p>
+            </div>
+            
+            <a href="https://credentials.databricks.com/debb18e0-8d96-48ca-a36b-39c6bbbdf374#acc.BDco4l3O" target="_blank" 
+               class="mt-3 inline-block text-primary hover:underline text-sm font-medium">
+                View Credential →
+            </a>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-gray-800 flex-1">Microsoft Certified: Azure Fundamentals</h3>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Active</span>
+            </div>
+            
+            <p class="text-primary font-semibold mb-2">Microsoft</p>
+            
+            <div class="text-gray-600 text-sm space-y-1">
+                <p>Issued: Mar 2024</p>
+                <p class="text-xs text-gray-500">Credential ID: C6D8AF12CC967E67</p>
+            </div>
+            
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/GuillermoCamineroFernndez-1939/C6D8AF12CC967E67?sharingId=92F2410C3EBAC08C" target="_blank" 
+               class="mt-3 inline-block text-primary hover:underline text-sm font-medium">
+                View Credential →
+            </a>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-gray-800 flex-1">Microsoft Certified: Azure Data Scientist Associate</h3>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Active</span>
+            </div>
+            
+            <p class="text-primary font-semibold mb-2">Microsoft</p>
+            
+            <div class="text-gray-600 text-sm space-y-1">
+                <p>Issued: Jul 2021</p>
+                <p>Expires: Jul 2026</p>
+                <p class="text-xs text-gray-500">Credential ID: D073A32659B1D96D</p>
+            </div>
+            
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/GuillermoCamineroFernndez-1939/D073A32659B1D96D?sharingId=92F2410C3EBAC08C" target="_blank" 
+               class="mt-3 inline-block text-primary hover:underline text-sm font-medium">
+                View Credential →
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Programming Languages Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800">Programming Languages</h2>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Language Icon -->
+            <div class="w-16 h-16 mb-3">
+                <img src="static/pics/programming_langs/python.png" 
+                     alt="Python"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Language Name -->
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Python</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-sm font-medium text-gray-600 mb-1">
+                8+ years
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-2">
+                <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+                    Full professional
+                </span>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Language Icon -->
+            <div class="w-16 h-16 mb-3">
+                <img src="static/pics/programming_langs/java.png" 
+                     alt="Java"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Language Name -->
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Java</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-sm font-medium text-gray-600 mb-1">
+                1 year
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-2">
+                <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+                    Understanding
+                </span>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Language Icon -->
+            <div class="w-16 h-16 mb-3">
+                <img src="static/pics/programming_langs/cpp.png" 
+                     alt="C/C++"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Language Name -->
+            <h3 class="text-lg font-bold text-gray-800 mb-2">C/C++</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-sm font-medium text-gray-600 mb-1">
+                1 year
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-2">
+                <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+                    Understanding
+                </span>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Language Icon -->
+            <div class="w-16 h-16 mb-3">
+                <img src="static/pics/programming_langs/golang.png" 
+                     alt="Go"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Language Name -->
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Go</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-sm font-medium text-gray-600 mb-1">
+                —
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-2">
+                <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+                    Basic knowledge
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Frameworks Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800">Frameworks & Tools</h2>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Framework Icon -->
+            <div class="w-16 h-16 mb-3 mx-auto">
+                <img src="static/pics/frameworks/azure.png" 
+                     alt="Azure"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Framework Name -->
+            <h3 class="text-base font-bold text-gray-800 mb-1 text-center">Azure</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-xs font-medium text-gray-600 mb-1 text-center">
+                3 years
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-auto">
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                    Professional
+                </span>
+            </div>
+            
+            <!-- Services List (for Azure, etc.) -->
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Framework Icon -->
+            <div class="w-16 h-16 mb-3 mx-auto">
+                <img src="static/pics/frameworks/databricks.png" 
+                     alt="Databricks"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Framework Name -->
+            <h3 class="text-base font-bold text-gray-800 mb-1 text-center">Databricks</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-xs font-medium text-gray-600 mb-1 text-center">
+                2 years
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-auto">
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                    Professional
+                </span>
+            </div>
+            
+            <!-- Services List (for Azure, etc.) -->
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Framework Icon -->
+            <div class="w-16 h-16 mb-3 mx-auto">
+                <img src="static/pics/frameworks/pyspark.png" 
+                     alt="PySpark"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Framework Name -->
+            <h3 class="text-base font-bold text-gray-800 mb-1 text-center">PySpark</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-xs font-medium text-gray-600 mb-1 text-center">
+                3 years
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-auto">
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                    Comfortable
+                </span>
+            </div>
+            
+            <!-- Services List (for Azure, etc.) -->
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Framework Icon -->
+            <div class="w-16 h-16 mb-3 mx-auto">
+                <img src="static/pics/frameworks/delta.png" 
+                     alt="Delta Lake"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Framework Name -->
+            <h3 class="text-base font-bold text-gray-800 mb-1 text-center">Delta Lake</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-xs font-medium text-gray-600 mb-1 text-center">
+                2 years
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-auto">
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                    Comfortable
+                </span>
+            </div>
+            
+            <!-- Services List (for Azure, etc.) -->
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Framework Icon -->
+            <div class="w-16 h-16 mb-3 mx-auto">
+                <img src="static/pics/frameworks/github.png" 
+                     alt="GitHub"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Framework Name -->
+            <h3 class="text-base font-bold text-gray-800 mb-1 text-center">GitHub</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-xs font-medium text-gray-600 mb-1 text-center">
+                6 years
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-auto">
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                    Professional
+                </span>
+            </div>
+            
+            <!-- Services List (for Azure, etc.) -->
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Framework Icon -->
+            <div class="w-16 h-16 mb-3 mx-auto">
+                <img src="static/pics/frameworks/docker.png" 
+                     alt="Docker"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Framework Name -->
+            <h3 class="text-base font-bold text-gray-800 mb-1 text-center">Docker</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-xs font-medium text-gray-600 mb-1 text-center">
+                5 years
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-auto">
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                    Professional
+                </span>
+            </div>
+            
+            <!-- Services List (for Azure, etc.) -->
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Framework Icon -->
+            <div class="w-16 h-16 mb-3 mx-auto">
+                <img src="static/pics/frameworks/tensorflow.png" 
+                     alt="TensorFlow/Keras"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Framework Name -->
+            <h3 class="text-base font-bold text-gray-800 mb-1 text-center">TensorFlow/Keras</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-xs font-medium text-gray-600 mb-1 text-center">
+                1 year
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-auto">
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                    Basic knowledge
+                </span>
+            </div>
+            
+            <!-- Services List (for Azure, etc.) -->
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Framework Icon -->
+            <div class="w-16 h-16 mb-3 mx-auto">
+                <img src="static/pics/frameworks/pytorch.png" 
+                     alt="PyTorch"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Framework Name -->
+            <h3 class="text-base font-bold text-gray-800 mb-1 text-center">PyTorch</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-xs font-medium text-gray-600 mb-1 text-center">
+                1 year
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-auto">
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                    Basic knowledge
+                </span>
+            </div>
+            
+            <!-- Services List (for Azure, etc.) -->
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Framework Icon -->
+            <div class="w-16 h-16 mb-3 mx-auto">
+                <img src="static/pics/frameworks/sklearn.png" 
+                     alt="Scikit-learn"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Framework Name -->
+            <h3 class="text-base font-bold text-gray-800 mb-1 text-center">Scikit-learn</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-xs font-medium text-gray-600 mb-1 text-center">
+                3 years
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-auto">
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                    Comfortable
+                </span>
+            </div>
+            
+            <!-- Services List (for Azure, etc.) -->
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Framework Icon -->
+            <div class="w-16 h-16 mb-3 mx-auto">
+                <img src="static/pics/frameworks/OpenCV.png" 
+                     alt="OpenCV"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Framework Name -->
+            <h3 class="text-base font-bold text-gray-800 mb-1 text-center">OpenCV</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-xs font-medium text-gray-600 mb-1 text-center">
+                3 years
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-auto">
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                    Comfortable
+                </span>
+            </div>
+            
+            <!-- Services List (for Azure, etc.) -->
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+            <!-- Framework Icon -->
+            <div class="w-16 h-16 mb-3 mx-auto">
+                <img src="static/pics/frameworks/qgis.png" 
+                     alt="QGIS"
+                     class="w-full h-full object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Framework Name -->
+            <h3 class="text-base font-bold text-gray-800 mb-1 text-center">QGIS</h3>
+            
+            <!-- Years of Experience -->
+            <div class="text-xs font-medium text-gray-600 mb-1 text-center">
+                3 years
+            </div>
+            
+            <!-- Proficiency Badge -->
+            <div class="mt-auto">
+                <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                    Professional
+                </span>
+            </div>
+            
+            <!-- Services List (for Azure, etc.) -->
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800">Technical Skills</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Computer Vision</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Image Classification</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Object Detection</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Object Segmentation</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Facial Recognition</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">OCR & Document Processing</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">NLP</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Text Classification</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Sentiment Analysis</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Named Entity Recognition (NER)</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Metadata Extraction</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">ML & General</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Classification & Regression</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Clustering</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Reinforcement Learning</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Time Series Forecasting</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Data Visualization</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Data Wrangling</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">MLOps</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Data Engineering</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">ETL Pipelines</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">PySpark</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Databricks</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Delta Lake</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">SQL</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Geospatial</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Geospatial Data Science</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">ADAS Features</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Lidar Data Processing</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Maps Analytics</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Tools & Technologies</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Docker</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Git</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">FastAPI</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Flask</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">MySQL</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Spotfire</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Cloud & Azure Services</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 3.636a1 1 0 010 1.414 7 7 0 000 9.9 1 1 0 11-1.414 1.414 9 9 0 010-12.728 1 1 0 011.414 0zm9.9 0a1 1 0 011.414 0 9 9 0 010 12.728 1 1 0 11-1.414-1.414 7 7 0 000-9.9 1 1 0 010-1.414zM7.879 6.464a1 1 0 010 1.414 3 3 0 000 4.243 1 1 0 11-1.415 1.414 5 5 0 010-7.07 1 1 0 011.415 0zm4.242 0a1 1 0 011.415 0 5 5 0 010 7.072 1 1 0 01-1.415-1.415 3 3 0 000-4.242 1 1 0 010-1.415zM10 9a1 1 0 011 1v.01a1 1 0 11-2 0V10a1 1 0 011-1z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Azure Blob Storage</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 3.636a1 1 0 010 1.414 7 7 0 000 9.9 1 1 0 11-1.414 1.414 9 9 0 010-12.728 1 1 0 011.414 0zm9.9 0a1 1 0 011.414 0 9 9 0 010 12.728 1 1 0 11-1.414-1.414 7 7 0 000-9.9 1 1 0 010-1.414zM7.879 6.464a1 1 0 010 1.414 3 3 0 000 4.243 1 1 0 11-1.415 1.414 5 5 0 010-7.07 1 1 0 011.415 0zm4.242 0a1 1 0 011.415 0 5 5 0 010 7.072 1 1 0 01-1.415-1.415 3 3 0 000-4.242 1 1 0 010-1.415zM10 9a1 1 0 011 1v.01a1 1 0 11-2 0V10a1 1 0 011-1z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Azure Batch Accounts</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 3.636a1 1 0 010 1.414 7 7 0 000 9.9 1 1 0 11-1.414 1.414 9 9 0 010-12.728 1 1 0 011.414 0zm9.9 0a1 1 0 011.414 0 9 9 0 010 12.728 1 1 0 11-1.414-1.414 7 7 0 000-9.9 1 1 0 010-1.414zM7.879 6.464a1 1 0 010 1.414 3 3 0 000 4.243 1 1 0 11-1.415 1.414 5 5 0 010-7.07 1 1 0 011.415 0zm4.242 0a1 1 0 011.415 0 5 5 0 010 7.072 1 1 0 01-1.415-1.415 3 3 0 000-4.242 1 1 0 010-1.415zM10 9a1 1 0 011 1v.01a1 1 0 11-2 0V10a1 1 0 011-1z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Azure Container Registry (ACR)</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 3.636a1 1 0 010 1.414 7 7 0 000 9.9 1 1 0 11-1.414 1.414 9 9 0 010-12.728 1 1 0 011.414 0zm9.9 0a1 1 0 011.414 0 9 9 0 010 12.728 1 1 0 11-1.414-1.414 7 7 0 000-9.9 1 1 0 010-1.414zM7.879 6.464a1 1 0 010 1.414 3 3 0 000 4.243 1 1 0 11-1.415 1.414 5 5 0 010-7.07 1 1 0 011.415 0zm4.242 0a1 1 0 011.415 0 5 5 0 010 7.072 1 1 0 01-1.415-1.415 3 3 0 000-4.242 1 1 0 010-1.415zM10 9a1 1 0 011 1v.01a1 1 0 11-2 0V10a1 1 0 011-1z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Azure Database for PostgreSQL</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 3.636a1 1 0 010 1.414 7 7 0 000 9.9 1 1 0 11-1.414 1.414 9 9 0 010-12.728 1 1 0 011.414 0zm9.9 0a1 1 0 011.414 0 9 9 0 010 12.728 1 1 0 11-1.414-1.414 7 7 0 000-9.9 1 1 0 010-1.414zM7.879 6.464a1 1 0 010 1.414 3 3 0 000 4.243 1 1 0 11-1.415 1.414 5 5 0 010-7.07 1 1 0 011.415 0zm4.242 0a1 1 0 011.415 0 5 5 0 010 7.072 1 1 0 01-1.415-1.415 3 3 0 000-4.242 1 1 0 010-1.415zM10 9a1 1 0 011 1v.01a1 1 0 11-2 0V10a1 1 0 011-1z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Azure Key Vaults</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 3.636a1 1 0 010 1.414 7 7 0 000 9.9 1 1 0 11-1.414 1.414 9 9 0 010-12.728 1 1 0 011.414 0zm9.9 0a1 1 0 011.414 0 9 9 0 010 12.728 1 1 0 11-1.414-1.414 7 7 0 000-9.9 1 1 0 010-1.414zM7.879 6.464a1 1 0 010 1.414 3 3 0 000 4.243 1 1 0 11-1.415 1.414 5 5 0 010-7.07 1 1 0 011.415 0zm4.242 0a1 1 0 011.415 0 5 5 0 010 7.072 1 1 0 01-1.415-1.415 3 3 0 000-4.242 1 1 0 010-1.415zM10 9a1 1 0 011 1v.01a1 1 0 11-2 0V10a1 1 0 011-1z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Azure Container Instances</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 3.636a1 1 0 010 1.414 7 7 0 000 9.9 1 1 0 11-1.414 1.414 9 9 0 010-12.728 1 1 0 011.414 0zm9.9 0a1 1 0 011.414 0 9 9 0 010 12.728 1 1 0 11-1.414-1.414 7 7 0 000-9.9 1 1 0 010-1.414zM7.879 6.464a1 1 0 010 1.414 3 3 0 000 4.243 1 1 0 11-1.415 1.414 5 5 0 010-7.07 1 1 0 011.415 0zm4.242 0a1 1 0 011.415 0 5 5 0 010 7.072 1 1 0 01-1.415-1.415 3 3 0 000-4.242 1 1 0 010-1.415zM10 9a1 1 0 011 1v.01a1 1 0 11-2 0V10a1 1 0 011-1z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Azure Cost Management</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 3.636a1 1 0 010 1.414 7 7 0 000 9.9 1 1 0 11-1.414 1.414 9 9 0 010-12.728 1 1 0 011.414 0zm9.9 0a1 1 0 011.414 0 9 9 0 010 12.728 1 1 0 11-1.414-1.414 7 7 0 000-9.9 1 1 0 010-1.414zM7.879 6.464a1 1 0 010 1.414 3 3 0 000 4.243 1 1 0 11-1.415 1.414 5 5 0 010-7.07 1 1 0 011.415 0zm4.242 0a1 1 0 011.415 0 5 5 0 010 7.072 1 1 0 01-1.415-1.415 3 3 0 000-4.242 1 1 0 010-1.415zM10 9a1 1 0 011 1v.01a1 1 0 11-2 0V10a1 1 0 011-1z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">Azure Machine Learning</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Publications Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800">Publications</h2>
+    
+    <div class="space-y-4">
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Adversarial environment reinforcement learning algorithm for intrusion detection</h3>
+            <p class="text-gray-600 mb-2">Computer Networks (2019)</p>
+            <a href="https://doi.org/10.1016/j.comnet.2019.05.013" target="_blank" class="text-primary hover:underline font-medium">
+                View Publication →
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Courses Section (Collapsible) -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white rounded-lg shadow-md p-8">
+        <button onclick="toggleCourses()" class="w-full flex justify-between items-center text-left">
+            <h2 class="text-2xl font-bold text-gray-800">Additional Courses & Training</h2>
+            <svg id="courses-arrow" class="w-6 h-6 text-gray-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </button>
+        
+        <div id="courses-content" class="hidden mt-6">
+            <p class="text-sm text-gray-500 mb-4 italic">Completed various courses to expand knowledge and skills</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Hugging Face Agents Course</h3>
+                    <p class="text-sm text-gray-600"> - Jun 2025</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Faster Python Code</h3>
+                    <p class="text-sm text-gray-600">LinkedIn - Oct 2024</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Generative AI and LLMOps: Building Blocks and Applications</h3>
+                    <p class="text-sm text-gray-600">LinkedIn - Oct 2024</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Learn Python & Ethical Hacking From Scratch</h3>
+                    <p class="text-sm text-gray-600">zSecurity - May 2020</p>
+                    <a href="https://zsecurity.org/certification/validation/?cert_number=2stteGST" target="_blank" class="text-xs text-primary hover:underline">
+                        View Certificate
+                    </a>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">TensorFlow 2.0 Practical Advanced</h3>
+                    <p class="text-sm text-gray-600">Udemy - Mar 2020</p>
+                    <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-762f73db-ece4-4904-b2c7-c133349b1611.pdf" target="_blank" class="text-xs text-primary hover:underline">
+                        View Certificate
+                    </a>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">PyTorch for Deep Learning with Python Bootcamp</h3>
+                    <p class="text-sm text-gray-600">Udemy - Jan 2020</p>
+                    <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-9D5LW46T.pdf" target="_blank" class="text-xs text-primary hover:underline">
+                        View Certificate
+                    </a>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Intermediate Machine Learning</h3>
+                    <p class="text-sm text-gray-600">Kaggle - Jan 2020</p>
+                    <a href="https://www.kaggle.com/learn/certification/guillesld/intermediate-machine-learning" target="_blank" class="text-xs text-primary hover:underline">
+                        View Certificate
+                    </a>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">PyTorch for Deep Learning and Computer Vision</h3>
+                    <p class="text-sm text-gray-600">Udemy - Aug 2019</p>
+                    <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-9PFC0CKW.pdf" target="_blank" class="text-xs text-primary hover:underline">
+                        View Certificate
+                    </a>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Advanced AI: Deep Reinforcement Learning in Python</h3>
+                    <p class="text-sm text-gray-600">Udemy - Jul 2019</p>
+                    <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-HS7I8ALU.pdf" target="_blank" class="text-xs text-primary hover:underline">
+                        View Certificate
+                    </a>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Deep Learning: Advanced Computer Vision</h3>
+                    <p class="text-sm text-gray-600">Udemy - Jul 2019</p>
+                    <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-UA9YWJNC.pdf" target="_blank" class="text-xs text-primary hover:underline">
+                        View Certificate
+                    </a>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Advanced Deep Learning with Keras</h3>
+                    <p class="text-sm text-gray-600">DataCamp - Jun 2019</p>
+                    <a href="https://www.datacamp.com/statement-of-accomplishment/course/2097ccbdc8e6bf67c69054b4c0ec2c6c14e329d7" target="_blank" class="text-xs text-primary hover:underline">
+                        View Certificate
+                    </a>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Deploy ML & NLP Models with Dockers (DevOps)</h3>
+                    <p class="text-sm text-gray-600">Udemy - Apr 2019</p>
+                    <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-15DMTU1U.pdf" target="_blank" class="text-xs text-primary hover:underline">
+                        View Certificate
+                    </a>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">The Complete SQL Bootcamp</h3>
+                    <p class="text-sm text-gray-600">Udemy - Apr 2019</p>
+                    <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-3AADDLUA.pdf" target="_blank" class="text-xs text-primary hover:underline">
+                        View Certificate
+                    </a>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Spark for Machine Learning & AI</h3>
+                    <p class="text-sm text-gray-600">LinkedIn - Mar 2019</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Deep Learning: Face Recognition</h3>
+                    <p class="text-sm text-gray-600">LinkedIn - Feb 2019</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Python para data scientist avanzado</h3>
+                    <p class="text-sm text-gray-600">LinkedIn - Feb 2019</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Zero to Deep Learning with Python and Keras</h3>
+                    <p class="text-sm text-gray-600">Udemy - Jan 2019</p>
+                    <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-Y3ZQOJA1.pdf" target="_blank" class="text-xs text-primary hover:underline">
+                        View Certificate
+                    </a>
+                </div>
+                <div class="p-4 bg-gray-50 rounded">
+                    <h3 class="font-semibold text-gray-800">Complete Guide to TensorFlow for Deep Learning with Python</h3>
+                    <p class="text-sm text-gray-600">Udemy - Dec 2018</p>
+                    <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-3WTCOXE1.pdf" target="_blank" class="text-xs text-primary hover:underline">
+                        View Certificate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Extra-Curricular Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-12">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800">Extra-Curricular Activities</h2>
+    
+    <div class="space-y-4">
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold text-gray-800">Mentoring of new students: MENTUM program</h3>
+            <p class="text-primary font-medium">ETSIT UVA</p>
+            <p class="text-gray-600">2017-2018</p>
+            <a href="http://memtumorienta.blogs.uva.es/" target="_blank" class="text-primary hover:underline text-sm">
+                Learn More →
+            </a>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold text-gray-800">Collaboration in the Department of Electricity and Electronics</h3>
+            <p class="text-primary font-medium">ETSIT UVA</p>
+            <p class="text-gray-600">2016-2018</p>
+            <a href="https://www.ele.uva.es/" target="_blank" class="text-primary hover:underline text-sm">
+                Learn More →
+            </a>
+        </div>
+    </div>
+</section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-8 mt-20 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <p class="text-lg font-semibold text-white">Guillermo Caminero Fernández</p>
+                    <p class="text-sm">ML Engineer | Production Systems & Pipeline Optimization</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="mailto:gcaminerof@gmail.com" 
+                       class="hover:text-white transition"
+                       title="Email">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://github.com/gcamfer" 
+                       target="_blank"
+                       class="hover:text-white transition"
+                       title="GitHub">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://linkedin.com/in/guillermo-caminero-fernandez" 
+                       target="_blank"
+                       class="hover:text-white transition"
+                       title="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-center text-sm text-gray-400">
+                <p>Last updated: November 2025</p>
+                <p class="mt-1">Built with Python, Jinja2, and Tailwind CSS</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Custom JavaScript -->
+    <script src="static/js/pdf-generator.js"></script>
+    
+<script>
+    function toggleCourses() {
+        const content = document.getElementById('courses-content');
+        const arrow = document.getElementById('courses-arrow');
+        
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            arrow.classList.add('rotate-180');
+        } else {
+            content.classList.add('hidden');
+            arrow.classList.remove('rotate-180');
+        }
+    }
+</script>
+</body>
+</html>

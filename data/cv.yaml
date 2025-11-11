@@ -1,0 +1,475 @@
+# AI-Friendly CV Data
+# All dates in YYYY-MM-DD format for automatic calculation
+
+personal:
+  name: "Guillermo Caminero Fernández"
+  title: "ML Engineer | Production Systems & Pipeline Optimization"
+  location: "Madrid, Spain"
+  phone: "+34 653 579 976"
+  email: "gcaminerof@gmail.com"
+  github: "gcamfer"
+  linkedin: "guillermo-caminero-fernandez"
+  photo: "pics/profile.jpg"
+
+about:
+  total_experience_start: "2018-08-01"  # First professional job at Minsait
+  
+  summary: |
+    M.Sc. in Telecommunications Engineering with extensive experience in machine learning, computer vision, and NLP. 
+    Started working mainly in natural language processing but developed a strong passion for computer vision, 
+    leading to expertise in facial recognition, object detection, and image segmentation. Currently focused on 
+    geospatial data science and maps analytics for ADAS features at TomTom.
+    
+    Passionate about putting ML models into production and optimizing ETL pipelines to achieve the best throughput 
+    while minimizing costs. Over the past 2 years, I have specialized in profiling and optimizing Python code to 
+    reach the maximum potential of each workflow, ensuring efficient and scalable data processing systems.
+    
+    Great passion for electronics, embedded systems (RaspberryPi, Arduino, FPGAs), cybersecurity, and pentesting. 
+    Always looking for new challenges to reach full potential.
+  
+  research: |
+    Support collaborator of the research team at the Communications Systems and Networks (SRC) Laboratory 
+    at Universidad de Valladolid, working on the application of machine learning to intrusion detection in data networks.
+
+languages:
+  - name: "Spanish"
+    flag: "flags/SP.png"
+    level: 5  # Native
+  - name: "English"
+    flag: "flags/GB.png"
+    level: 3  # Professional working proficiency
+
+work_experience:
+  - company: "TomTom"
+    position: "Senior Data Scientist"
+    location: "Madrid, Spain"
+    start_date: "2022-07-01"
+    end_date: null  # null means current position
+    description: |
+      Maps Analytics:
+      - Developing metrics to analyse the quality of maps for ADAS attributes
+      - Stakeholder orientation to focus data-driven efforts
+      - Extraction of ADAS features from sensors using ML
+      - Geospatial data science
+      
+      MLOPS:
+      - Productivization of ML models in Databricks
+      - ETL Load Optimization for lidar data and images into delta lake
+    technologies:
+      - PySpark
+      - Python
+      - Databricks
+      - Geospatial Data Science
+      - ADAS
+      - MLOps
+
+  - company: "Telefónica"
+    position: "Senior Data Scientist"
+    location: "Madrid, Spain"
+    start_date: "2020-08-01"
+    end_date: "2022-07-01"
+    description: |
+      Main projects:
+      - Sport analytics for first division football team
+      - Data science professor (internal training)
+      - Segmentation and classification of aerial drone imagery for defect detection
+      - Time series forecasting
+      - EDA and KPI visualizations in Spotfire for non-profit foundation
+      - Auto EDA and auto ML tool for internal use
+      - Research on facial recognition system for video door entry systems, proof of life and detecting onboarding frauds
+    technologies:
+      - Python
+      - PySpark
+      - TensorFlow
+      - Plotly
+      - Dash
+      - OpenCV
+      - Spotfire
+      - Docker
+      - MySQL
+      - FastAPI
+      - FFmpeg
+
+  - company: "Minsait (Indra)"
+    position: "NLP/NLU Analyst"
+    location: "Madrid, Spain"
+    start_date: "2018-08-01"
+    end_date: "2020-08-01"
+    description: |
+      Document management department:
+      - Metadata extraction from banking and legal documents, email information
+      - Text classification & sentiment analysis
+      - Computer vision: Object detection (signatures, stamps, brands, logos)
+      - OCR image preprocessing
+      - REST services development (Flask, Spring Boot)
+    technologies:
+      - Java
+      - Python
+      - Flask
+      - TensorFlow
+      - Keras
+      - NLTK
+      - Spacy
+      - Regular Expressions
+      - Tesseract
+      - Abbyy FineReader
+
+  - company: "GIR de Electrónica (Universidad de Valladolid)"
+    position: "Extracurricular Internships in Research Group"
+    location: "Valladolid, Spain"
+    start_date: "2016-04-01"
+    end_date: "2016-05-31"
+    description: |
+      - Electronic design of a system capable of performing the electrical-optical characterization of laser diodes
+      - Manufacture and assembly of the system developed on printed circuit board (PCB)
+    technologies:
+      - PCB Design
+      - Electronic Design
+      - Laser Characterization
+
+  - company: "GIR de Electrónica (Universidad de Valladolid)"
+    position: "Internships"
+    location: "Valladolid, Spain"
+    start_date: "2016-02-01"
+    end_date: "2016-04-30"
+    description: |
+      - Reverse engineering of the Spectra Pro 300i monochromator
+    technologies:
+      - Reverse Engineering
+      - Optical Systems
+
+education:
+  - degree: "Master in Telecommunication Engineering"
+    institution: "Universidad de Valladolid"
+    location: "Valladolid, Spain"
+    start_date: "2016-10-01"
+    end_date: "2018-07-31"
+    grade: "8.213/10"
+    highlights:
+      - "Signal processing/analysis (Matlab and Python)"
+      - "Programming FPGAs (Verilog)"
+      - "Web development (HTML, CSS, Javascript, PHP, MySQL)"
+    thesis:
+      title: "Reinforcement learning as a reaction to network anomalies"
+      url: "http://uvadoc.uva.es/handle/10324/33081"
+
+  - degree: "Degree in Engineering Specific Telecommunication Technologies"
+    specialization: "Electronic Systems"
+    institution: "Universidad de Valladolid"
+    location: "Valladolid, Spain"
+    start_date: "2013-09-01"
+    end_date: "2016-07-31"
+    grade: "7.0/10"
+    highlights:
+      - "PCB design (Proteus Design Suite)"
+      - "Electronic analysis & Electronic communications"
+      - "Electromagnetic compatibility"
+      - "Microcontroller programming (ARM7, PIC)"
+      - "Electronic communications protocols (UART, I2C, SPI, CAN, LIN, USB)"
+      - "Basic engineering concepts (physics, algebra, mathematics, statistics, programming)"
+    thesis:
+      title: "Design and manufacture of an electronic system for the optical characterization of laser diodes"
+      url: "http://uvadoc.uva.es/handle/10324/20960"
+
+certifications:
+  - name: "Fundamentals of MCP"
+    issuer: "Hugging Face"
+    date: "2025-07-01"
+    expiry: null
+    credential_id: "guillesld"
+    credential_url: "https://cas-bridge.xethub.hf.co/xet-bridge-us/682f5d0ff0af4dc8a20649c1/1d0a7b58197c2c9e5f650c55da35745d866bf1f6827df2637b2a96f3693753d0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251110%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251110T161515Z&X-Amz-Expires=3600&X-Amz-Signature=d188731f4d6b3ffa968d1c4ada24f33a484c83a65dcb400bafe74639b2f4cd95&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=6821d0b55c13d7676edd89c0&response-content-disposition=inline%3B+filename*%3DUTF-8%27%272025-07-09.png%3B+filename%3D%222025-07-09.png%22%3B&response-content-type=image%2Fpng&x-id=GetObject&Expires=1762794915&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2Mjc5NDkxNX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82ODJmNWQwZmYwYWY0ZGM4YTIwNjQ5YzEvMWQwYTdiNTgxOTdjMmM5ZTVmNjUwYzU1ZGEzNTc0NWQ4NjZiZjFmNjgyN2RmMjYzN2IyYTk2ZjM2OTM3NTNkMCoifV19&Signature=kGaBsbxqb2ZMAnAaxcbcgGet3jmQi2Urrr23XDopCLPYlk5J4k%7EY-eqOOHRW%7EkB2uOAy4LuXWzA5lNcdHE%7EvkfluD71XdkLMTC-ua4uExR2Gp%7E3uJo8zwaveb4yvMXtMkfOm3Nad-H38cw%7Epb%7EOr2E6uYibe8j0ZS3iOuXSMecTNuvu7WcQg5I6iSys7a34QxAF32sEp5eN3nqGnWYo0EbLqDuNyu9CNRp-XayY3w%7EnBZLgTQ7EPuGXhpbJS7oyeRhbSaLpS5hOUKhrggPKL6y9rPyqS4QcTN-m2r4ztrIKe5elgz%7E%7EpNcooRqL2nlZgfg1HLPp4i2%7EC4oeCgLS43A__&Key-Pair-Id=K2L8F4GPSG1IFC"
+    
+  - name: "AI Agents Fundamentals"
+    issuer: "Hugging Face"
+    date: "2025-06-01"
+    expiry: null
+    credential_id: "guillesld"
+    credential_url: "https://cas-bridge.xethub.hf.co/xet-bridge-us/67a47037749ea2c4b9fafd4b/30af8b13963275491e80cc67aa22a87bdb456ef04d36365e0bdf6822cfcfb9b6?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251110%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251110T161441Z&X-Amz-Expires=3600&X-Amz-Signature=07d46cf6a5bbdffada23f35b615f9e0b1693bc0b92c5d1de080af99f1be1c82f&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=6821d0b55c13d7676edd89c0&response-content-disposition=inline%3B+filename*%3DUTF-8%27%272025-06-11.png%3B+filename%3D%222025-06-11.png%22%3B&response-content-type=image%2Fpng&x-id=GetObject&Expires=1762794881&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2Mjc5NDg4MX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82N2E0NzAzNzc0OWVhMmM0YjlmYWZkNGIvMzBhZjhiMTM5NjMyNzU0OTFlODBjYzY3YWEyMmE4N2JkYjQ1NmVmMDRkMzYzNjVlMGJkZjY4MjJjZmNmYjliNioifV19&Signature=WzJAoEXHp-eUZJD1HbqrrPuXH8BKWoSxXZXBTVFT4zpI6RmXQjwekFIsp1dDFIuJG9YnohYlRTMk-hM2rl57%7E9TXpO432XgnDbQy%7ElED5VBLV-PRpAA-9kxOIwdTnihKSwQGYccO6hdpZfuQnF34%7EStlaNfSaYLIghK6ZU9%7EBRR1wRY2-yRUEiV0oGaC1rORGLJHREFZH9eT3QiTpQzkNGbxfZw6e0fHJPkiLYqTOH3fh5tJoJnMzwNZpBdMZS%7Eqd7gAJP7cvy%7E%7EGzhb1mLknvwIIpxEw71ksHCs%7EPfA%7EW4jhXI8mMjya%7EjlHYxaal3Vat8GWMlVoVf3YVzkVX4rBA__&Key-Pair-Id=K2L8F4GPSG1IFC"
+  
+    
+  - name: "Databricks Certified Data Engineer Professional"
+    issuer: "Databricks"
+    date: "2025-03-01"
+    expiry: "2027-03-01"
+    credential_id: "135825906"
+    credential_url: "https://credentials.databricks.com/176e9867-aa0e-4f75-bcb6-7df1573da4d3#acc.aXhCvpkt"
+    
+  - name: "Databricks Certified Machine Learning Associate"
+    issuer: "Databricks"
+    date: "2024-12-01"
+    expiry: "2026-12-01"
+    credential_id: "126447074"
+    credential_url: "https://credentials.databricks.com/debb18e0-8d96-48ca-a36b-39c6bbbdf374#acc.BDco4l3O"
+    
+  - name: "Microsoft Certified: Azure Fundamentals"
+    issuer: "Microsoft"
+    date: "2024-03-21"
+    expiry: null
+    credential_id: "C6D8AF12CC967E67"
+    credential_url: "https://learn.microsoft.com/api/credentials/share/en-us/GuillermoCamineroFernndez-1939/C6D8AF12CC967E67?sharingId=92F2410C3EBAC08C"
+    
+  - name: "Microsoft Certified: Azure Data Scientist Associate"
+    issuer: "Microsoft"
+    date: "2021-07-23"
+    expiry: "2026-07-24"
+    credential_id: "D073A32659B1D96D"
+    credential_url: "https://learn.microsoft.com/api/credentials/share/en-us/GuillermoCamineroFernndez-1939/D073A32659B1D96D?sharingId=92F2410C3EBAC08C"
+    notes: "Expired"
+
+courses:
+  # De-emphasized section - will be collapsible in the UI
+
+  - name: "Hugging Face Agents Course"
+    issuer: "Hugging Face"
+    date: "2025-06-01"
+    expiry: null
+    credential_id: null
+    credential_url: null
+
+  - name: "Faster Python Code"
+    provider: "LinkedIn"
+    date: "2024-10-01"
+    credential_url: null
+    
+  - name: "Generative AI and LLMOps: Building Blocks and Applications"
+    provider: "LinkedIn"
+    date: "2024-10-01"
+    credential_url: null
+    
+  - name: "Learn Python & Ethical Hacking From Scratch"
+    provider: "zSecurity"
+    date: "2020-05-01"
+    credential_id: "2stteGST"
+    credential_url: "https://zsecurity.org/certification/validation/?cert_number=2stteGST"
+    
+  - name: "TensorFlow 2.0 Practical Advanced"
+    provider: "Udemy"
+    date: "2020-03-01"
+    credential_url: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-762f73db-ece4-4904-b2c7-c133349b1611.pdf"
+    
+  - name: "PyTorch for Deep Learning with Python Bootcamp"
+    provider: "Udemy"
+    date: "2020-01-01"
+    credential_url: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-9D5LW46T.pdf"
+    
+  - name: "Intermediate Machine Learning"
+    provider: "Kaggle"
+    date: "2020-01-01"
+    credential_url: "https://www.kaggle.com/learn/certification/guillesld/intermediate-machine-learning"
+    
+  - name: "PyTorch for Deep Learning and Computer Vision"
+    provider: "Udemy"
+    date: "2019-08-01"
+    credential_url: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-9PFC0CKW.pdf"
+    
+  - name: "Advanced AI: Deep Reinforcement Learning in Python"
+    provider: "Udemy"
+    date: "2019-07-01"
+    credential_url: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-HS7I8ALU.pdf"
+    
+  - name: "Deep Learning: Advanced Computer Vision"
+    provider: "Udemy"
+    date: "2019-07-01"
+    credential_url: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-UA9YWJNC.pdf"
+    
+  - name: "Advanced Deep Learning with Keras"
+    provider: "DataCamp"
+    date: "2019-06-01"
+    credential_url: "https://www.datacamp.com/statement-of-accomplishment/course/2097ccbdc8e6bf67c69054b4c0ec2c6c14e329d7"
+    
+  - name: "Deploy ML & NLP Models with Dockers (DevOps)"
+    provider: "Udemy"
+    date: "2019-04-01"
+    credential_url: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-15DMTU1U.pdf"
+    
+  - name: "The Complete SQL Bootcamp"
+    provider: "Udemy"
+    date: "2019-04-01"
+    credential_url: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-3AADDLUA.pdf"
+    
+  - name: "Spark for Machine Learning & AI"
+    provider: "LinkedIn"
+    date: "2019-03-01"
+    credential_url: null
+    
+  - name: "Deep Learning: Face Recognition"
+    provider: "LinkedIn"
+    date: "2019-02-01"
+    credential_url: null
+    
+  - name: "Python para data scientist avanzado"
+    provider: "LinkedIn"
+    date: "2019-02-01"
+    credential_url: null
+    
+  - name: "Zero to Deep Learning with Python and Keras"
+    provider: "Udemy"
+    date: "2019-01-01"
+    credential_url: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-Y3ZQOJA1.pdf"
+    
+  - name: "Complete Guide to TensorFlow for Deep Learning with Python"
+    provider: "Udemy"
+    date: "2018-12-01"
+    credential_url: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-3WTCOXE1.pdf"
+
+programming_languages:
+  # Start dates for automatic calculation of years of experience
+  - name: "Python"
+    icon: "pics/programming_langs/python.png"
+    start_date: "2018-01-01"  # Primary language since beginning of professional career
+    proficiency: "Full professional"
+    
+  - name: "Java"
+    icon: "pics/programming_langs/java.png"
+    years_experience: 1  # Fixed experience
+    proficiency: "Understanding"
+    
+  - name: "C/C++"
+    icon: "pics/programming_langs/cpp.png"
+    years_experience: 1  # Fixed experience
+    proficiency: "Understanding"
+    
+  - name: "Go"
+    icon: "pics/programming_langs/golang.png"
+    proficiency: "Basic knowledge"
+
+frameworks:
+  - name: "Azure"
+    icon: "pics/frameworks/azure.png"
+    years_experience: 3
+    proficiency: "Professional"
+    
+  - name: "Databricks"
+    icon: "pics/frameworks/databricks.png"
+    years_experience: 2
+    proficiency: "Professional"
+    
+  - name: "PySpark"
+    icon: "pics/frameworks/pyspark.png"
+    years_experience: 3
+    proficiency: "Comfortable"
+    
+  - name: "Delta Lake"
+    icon: "pics/frameworks/delta.png"
+    years_experience: 2
+    proficiency: "Comfortable"
+    
+  - name: "GitHub"
+    icon: "pics/frameworks/github.png"
+    years_experience: 6
+    proficiency: "Professional"
+
+  - name: "Docker"
+    icon: "pics/frameworks/docker.png"
+    years_experience: 5
+    proficiency: "Professional"
+    
+  - name: "TensorFlow/Keras"
+    icon: "pics/frameworks/tensorflow.png"
+    years_experience: 1
+    proficiency: "Basic knowledge"
+    
+  - name: "PyTorch"
+    icon: "pics/frameworks/pytorch.png"
+    years_experience: 1
+    proficiency: "Basic knowledge"
+    
+  - name: "Scikit-learn"
+    icon: "pics/frameworks/sklearn.png"
+    years_experience: 3
+    proficiency: "Comfortable"
+    
+  - name: "OpenCV"
+    icon: "pics/frameworks/OpenCV.png"
+    years_experience: 3
+    proficiency: "Comfortable"
+    
+  - name: "QGIS"
+    icon: "pics/frameworks/qgis.png"
+    years_experience: 3
+    proficiency: "Professional"
+
+skills:
+  # Simplified presentation - no complex spider charts
+  computer_vision:
+    - "Image Classification"
+    - "Object Detection"
+    - "Object Segmentation"
+    - "Facial Recognition"
+    - "OCR & Document Processing"
+    
+  nlp:
+    - "Text Classification"
+    - "Sentiment Analysis"
+    - "Named Entity Recognition (NER)"
+    - "Metadata Extraction"
+    
+  ml_general:
+    - "Classification & Regression"
+    - "Clustering"
+    - "Reinforcement Learning"
+    - "Time Series Forecasting"
+    - "Data Visualization"
+    - "Data Wrangling"
+    - "MLOps"
+    
+  data_engineering:
+    - "ETL Pipelines"
+    - "PySpark"
+    - "Databricks"
+    - "Delta Lake"
+    - "SQL"
+    
+  geospatial:
+    - "Geospatial Data Science"
+    - "ADAS Features"
+    - "Lidar Data Processing"
+    - "Maps Analytics"
+    
+  tools:
+    - "Docker"
+    - "Git"
+    - "FastAPI"
+    - "Flask"
+    - "MySQL"
+    - "Spotfire"
+    
+  cloud:
+    - "Azure Blob Storage"
+    - "Azure Batch Accounts"
+    - "Azure Container Registry (ACR)"
+    - "Azure Database for PostgreSQL"
+    - "Azure Key Vaults"
+    - "Azure Container Instances"
+    - "Azure Cost Management"
+    - "Azure Machine Learning"
+
+publications:
+  - title: "Adversarial environment reinforcement learning algorithm for intrusion detection"
+    journal: "Computer Networks"
+    year: 2019
+    url: "https://doi.org/10.1016/j.comnet.2019.05.013"
+
+extracurricular:
+  - activity: "Mentoring of new students: MENTUM program"
+    organization: "ETSIT UVA"
+    period: "2017-2018"
+    url: "http://memtumorienta.blogs.uva.es/"
+    
+  - activity: "Collaboration in the Department of Electricity and Electronics"
+    organization: "ETSIT UVA"
+    period: "2016-2018"
+    url: "https://www.ele.uva.es/"
+
+portfolio:
+  - title: "H3 Overture Indexing"
+    description: "Placeholder for H3 Overture indexing project. Content to be added."
+    technologies:
+      - Python
+      - H3
+      - Geospatial
+    status: "in_progress"
+    github_url: null
+    demo_url: null
+    image: null
+

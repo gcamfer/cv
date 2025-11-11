@@ -1,0 +1,14 @@
+[project]
+name = "cv-website"
+version = "1.0.0"
+description = "AI-friendly CV and portfolio website generator"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "Jinja2>=3.1.3",
+    "PyYAML>=6.0.1",
+    "python-dateutil>=2.8.2",
+]
+
+[tool.uv]
+dev-dependencies = []
