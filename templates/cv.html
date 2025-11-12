@@ -38,7 +38,7 @@
 </section>
 
 <!-- About Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id="about-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="bg-white rounded-lg shadow-md p-8">
         <h2 class="text-3xl font-bold mb-6 text-gray-800">About Me</h2>
         
@@ -68,7 +68,7 @@
     
     <div class="space-y-8">
         {% for job in cv.work_experience %}
-        <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
+        <div class="work-experience-item bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                     <h3 class="text-2xl font-bold text-gray-800">{{ job.position }}</h3>
@@ -103,7 +103,7 @@
     
     <div class="space-y-6">
         {% for edu in cv.education %}
-        <div class="bg-white rounded-lg shadow-md p-8">
+        <div class="education-item bg-white rounded-lg shadow-md p-8">
             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                     <h3 class="text-2xl font-bold text-gray-800">{{ edu.degree }}</h3>
@@ -149,12 +149,12 @@
 </section>
 
 <!-- Certifications Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id="certifications-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h2 class="text-3xl font-bold mb-8 text-gray-800">Certifications</h2>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {% for cert in cv.certifications %}
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition {% if not cert.expiry | is_active_cert %}opacity-75{% endif %}">
+        <div class="certification-item bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition {% if not cert.expiry | is_active_cert %}opacity-75{% endif %}">
             <div class="flex justify-between items-start mb-2">
                 <h3 class="text-xl font-bold text-gray-800 flex-1">{{ cert.name }}</h3>
                 {% if cert.expiry | is_active_cert %}
@@ -280,7 +280,7 @@
 </section>
 
 <!-- Skills Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id="technical-skills-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h2 class="text-3xl font-bold mb-8 text-gray-800">Technical Skills</h2>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -386,7 +386,7 @@
 
 <!-- Publications Section -->
 {% if cv.publications %}
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id="publications-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h2 class="text-3xl font-bold mb-8 text-gray-800">Publications</h2>
     
     <div class="space-y-4">
@@ -406,7 +406,7 @@
 {% endif %}
 
 <!-- Courses Section (Collapsible) -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id="courses-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="bg-white rounded-lg shadow-md p-8">
         <button onclick="toggleCourses()" class="w-full flex justify-between items-center text-left">
             <h2 class="text-2xl font-bold text-gray-800">Additional Courses & Training</h2>
@@ -436,7 +436,7 @@
 
 <!-- Extra-Curricular Section -->
 {% if cv.extracurricular %}
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-12">
+<section id="extra-curricular-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-12">
     <h2 class="text-3xl font-bold mb-8 text-gray-800">Extra-Curricular Activities</h2>
     
     <div class="space-y-4">

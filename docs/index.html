@@ -132,7 +132,7 @@
 </section>
 
 <!-- About Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id="about-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="bg-white rounded-lg shadow-md p-8">
         <h2 class="text-3xl font-bold mb-6 text-gray-800">About Me</h2>
         
@@ -159,7 +159,7 @@ at Universidad de Valladolid, working on the application of machine learning to 
     <h2 class="text-3xl font-bold mb-8 text-gray-800">Work Experience</h2>
     
     <div class="space-y-8">
-        <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
+        <div class="work-experience-item bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                     <h3 class="text-2xl font-bold text-gray-800">Senior Data Scientist</h3>
@@ -175,12 +175,19 @@ at Universidad de Valladolid, working on the application of machine learning to 
             <div class="text-gray-700 mb-4 whitespace-pre-line">Maps Analytics:
 - Developing metrics to analyse the quality of maps for ADAS attributes
 - Stakeholder orientation to focus data-driven efforts
-- Extraction of ADAS features from sensors using ML
+- Extraction of ADAS features from sensors using ML enabling quality checks without manual intervention
+- Designed a unified pipeline for metric creation that reduced the time to create a new metric from 6 months to 4 weeks
 - Geospatial data science
 
 MLOPS:
-- Productivization of ML models in Databricks
+- Productivization of ML models in Databricks ( CV detection and classification )
 - ETL Load Optimization for lidar data and images into delta lake
+- Monitoring the performance and costs
+- Performance optimization of the pipeline reducing the baseline cost by 80% using rust and cython based libraries and optimizing the code
+
+AI Agents:
+- Automatic feedback classification using LLMs and RAG for reducing manual effort of low value feedback by 40%
+- [POC] AI agent for querying the map (talking to the map), using claude + rag + smolagents
 </div>
             
             <div class="flex flex-wrap gap-2 mt-4">
@@ -204,7 +211,7 @@ MLOPS:
                 </span>
             </div>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
+        <div class="work-experience-item bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                     <h3 class="text-2xl font-bold text-gray-800">Senior Data Scientist</h3>
@@ -263,7 +270,7 @@ MLOPS:
                 </span>
             </div>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
+        <div class="work-experience-item bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                     <h3 class="text-2xl font-bold text-gray-800">NLP/NLU Analyst</h3>
@@ -317,7 +324,7 @@ MLOPS:
                 </span>
             </div>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
+        <div class="work-experience-item bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                     <h3 class="text-2xl font-bold text-gray-800">Extracurricular Internships in Research Group</h3>
@@ -346,7 +353,7 @@ MLOPS:
                 </span>
             </div>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
+        <div class="work-experience-item bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition">
             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                     <h3 class="text-2xl font-bold text-gray-800">Internships</h3>
@@ -379,7 +386,7 @@ MLOPS:
     <h2 class="text-3xl font-bold mb-8 text-gray-800">Education</h2>
     
     <div class="space-y-6">
-        <div class="bg-white rounded-lg shadow-md p-8">
+        <div class="education-item bg-white rounded-lg shadow-md p-8">
             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                     <h3 class="text-2xl font-bold text-gray-800">Master in Telecommunication Engineering</h3>
@@ -409,7 +416,7 @@ MLOPS:
                 </a>
             </div>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-8">
+        <div class="education-item bg-white rounded-lg shadow-md p-8">
             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                     <h3 class="text-2xl font-bold text-gray-800">Degree in Engineering Specific Telecommunication Technologies</h3>
@@ -447,11 +454,11 @@ MLOPS:
 </section>
 
 <!-- Certifications Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id="certifications-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h2 class="text-3xl font-bold mb-8 text-gray-800">Certifications</h2>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
+        <div class="certification-item bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
             <div class="flex justify-between items-start mb-2">
                 <h3 class="text-xl font-bold text-gray-800 flex-1">Fundamentals of MCP</h3>
                 <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Active</span>
@@ -469,7 +476,7 @@ MLOPS:
                 View Credential →
             </a>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
+        <div class="certification-item bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
             <div class="flex justify-between items-start mb-2">
                 <h3 class="text-xl font-bold text-gray-800 flex-1">AI Agents Fundamentals</h3>
                 <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Active</span>
@@ -487,7 +494,7 @@ MLOPS:
                 View Credential →
             </a>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
+        <div class="certification-item bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
             <div class="flex justify-between items-start mb-2">
                 <h3 class="text-xl font-bold text-gray-800 flex-1">Databricks Certified Data Engineer Professional</h3>
                 <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Active</span>
@@ -506,7 +513,7 @@ MLOPS:
                 View Credential →
             </a>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
+        <div class="certification-item bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
             <div class="flex justify-between items-start mb-2">
                 <h3 class="text-xl font-bold text-gray-800 flex-1">Databricks Certified Machine Learning Associate</h3>
                 <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Active</span>
@@ -525,7 +532,7 @@ MLOPS:
                 View Credential →
             </a>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
+        <div class="certification-item bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
             <div class="flex justify-between items-start mb-2">
                 <h3 class="text-xl font-bold text-gray-800 flex-1">Microsoft Certified: Azure Fundamentals</h3>
                 <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Active</span>
@@ -543,7 +550,7 @@ MLOPS:
                 View Credential →
             </a>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
+        <div class="certification-item bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ">
             <div class="flex justify-between items-start mb-2">
                 <h3 class="text-xl font-bold text-gray-800 flex-1">Microsoft Certified: Azure Data Scientist Associate</h3>
                 <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Active</span>
@@ -964,7 +971,7 @@ MLOPS:
 </section>
 
 <!-- Skills Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id="technical-skills-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h2 class="text-3xl font-bold mb-8 text-gray-800">Technical Skills</h2>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1247,7 +1254,7 @@ MLOPS:
 </section>
 
 <!-- Publications Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id="publications-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h2 class="text-3xl font-bold mb-8 text-gray-800">Publications</h2>
     
     <div class="space-y-4">
@@ -1262,7 +1269,7 @@ MLOPS:
 </section>
 
 <!-- Courses Section (Collapsible) -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id="courses-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="bg-white rounded-lg shadow-md p-8">
         <button onclick="toggleCourses()" class="w-full flex justify-between items-center text-left">
             <h2 class="text-2xl font-bold text-gray-800">Additional Courses & Training</h2>
@@ -1388,7 +1395,7 @@ MLOPS:
 </section>
 
 <!-- Extra-Curricular Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-12">
+<section id="extra-curricular-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-12">
     <h2 class="text-3xl font-bold mb-8 text-gray-800">Extra-Curricular Activities</h2>
     
     <div class="space-y-4">

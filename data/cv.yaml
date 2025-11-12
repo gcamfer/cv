@@ -49,12 +49,19 @@ work_experience:
       Maps Analytics:
       - Developing metrics to analyse the quality of maps for ADAS attributes
       - Stakeholder orientation to focus data-driven efforts
-      - Extraction of ADAS features from sensors using ML
+      - Extraction of ADAS features from sensors using ML enabling quality checks without manual intervention
+      - Designed a unified pipeline for metric creation that reduced the time to create a new metric from 6 months to 4 weeks
       - Geospatial data science
       
       MLOPS:
-      - Productivization of ML models in Databricks
+      - Productivization of ML models in Databricks ( CV detection and classification )
       - ETL Load Optimization for lidar data and images into delta lake
+      - Monitoring the performance and costs
+      - Performance optimization of the pipeline reducing the baseline cost by 80% using rust and cython based libraries and optimizing the code
+
+      AI Agents:
+      - Automatic feedback classification using LLMs and RAG for reducing manual effort of low value feedback by 40%
+      - [POC] AI agent for querying the map (talking to the map), using claude + rag + smolagents
     technologies:
       - PySpark
       - Python

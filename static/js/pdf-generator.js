@@ -1,6 +1,20 @@
 /**
  * PDF Generator
  * Generates PDF from CV page using jsPDF and html2canvas
+ * 
+ * NOTE: This approach converts the entire CV to an image and then splits it across PDF pages.
+ * While we add CSS hints (page-break-inside: avoid) and spacing to minimize awkward breaks,
+ * html2canvas doesn't fully respect page-break CSS properties since it renders to a single image.
+ * 
+ * For better page break control, consider:
+ * - pdfmake (generates PDF directly from content structure)
+ * - puppeteer (server-side rendering with better CSS print support)
+ * - Manual section-by-section rendering
+ * 
+ * Current optimizations:
+ * - Added margins to PDF (10mm on each side)
+ * - Increased spacing between sections to create natural break points
+ * - Higher quality rendering (scale: 2)
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -37,15 +51,26 @@ async function generatePDF() {
         // Clone the content to avoid modifying the original
         const clone = content.cloneNode(true);
         
+        // Add PDF mode class for compact layout
+        clone.classList.add('pdf-mode');
+        
         // Remove no-print elements from clone
         const noPrintElements = clone.querySelectorAll('.no-print');
         noPrintElements.forEach(el => el.remove());
+        
+        // Add PDF-specific styling to prevent breaks
+        const itemsToProtect = clone.querySelectorAll('.work-experience-item, .education-item, .certification-item');
+        itemsToProtect.forEach(item => {
+            item.style.pageBreakInside = 'avoid';
+            item.style.breakInside = 'avoid';
+        });
         
         // Temporarily add clone to document for rendering
         clone.style.position = 'absolute';
         clone.style.left = '-9999px';
         clone.style.width = '210mm'; // A4 width
         clone.style.background = 'white';
+        clone.style.padding = '10mm';
         document.body.appendChild(clone);
         
         // Wait for all images to load before generating PDF
@@ -87,27 +112,31 @@ async function generatePDF() {
         // Remove clone
         document.body.removeChild(clone);
         
-        // Create PDF
+        // Create PDF with margins
         const { jsPDF } = window.jspdf;
-        const imgWidth = 210; // A4 width in mm
+        const pageWidth = 210; // A4 width in mm
         const pageHeight = 297; // A4 height in mm
-        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        const margin = 10; // 10mm margin on each side
+        const contentWidth = pageWidth - (2 * margin);
+        const contentHeight = pageHeight - (2 * margin);
+        
+        const imgHeight = (canvas.height * contentWidth) / canvas.width;
         let heightLeft = imgHeight;
         
         const pdf = new jsPDF('p', 'mm', 'a4');
-        let position = 0;
+        let position = margin;
         
-        // Add image to PDF
+        // Add image to PDF with margins
         const imgData = canvas.toDataURL('image/jpeg', 0.95);
-        pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
+        pdf.addImage(imgData, 'JPEG', margin, position, contentWidth, imgHeight);
+        heightLeft -= contentHeight;
         
         // Add new pages if content is longer than one page
         while (heightLeft > 0) {
-            position = heightLeft - imgHeight;
+            position = margin - (imgHeight - heightLeft);
             pdf.addPage();
-            pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
+            pdf.addImage(imgData, 'JPEG', margin, position, contentWidth, imgHeight);
+            heightLeft -= contentHeight;
         }
         
         // Generate filename with current date
