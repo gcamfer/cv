@@ -337,6 +337,27 @@ html {
     font-size: 0.9rem !important;
 }
 
+/* Languages in Header - Compact in PDF */
+.pdf-mode .bg-gradient-to-r .flex.flex-wrap.gap-4 {
+    gap: 0.3rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.pdf-mode .bg-gradient-to-r .flex.flex-wrap.gap-4 > div {
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.7rem !important;
+}
+
+.pdf-mode .bg-gradient-to-r .flex.flex-wrap.gap-4 img {
+    width: 1rem !important;
+    height: 1rem !important;
+}
+
+.pdf-mode .bg-gradient-to-r .flex.flex-wrap.gap-4 svg {
+    width: 0.6rem !important;
+    height: 0.6rem !important;
+}
+
 /* Certifications in 3 columns for compactness */
 .pdf-mode #certifications-section .grid {
     display: grid !important;

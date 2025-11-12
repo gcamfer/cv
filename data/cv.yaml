@@ -47,16 +47,16 @@ work_experience:
     end_date: null  # null means current position
     description: |
       Maps Analytics:
-      - Developing metrics to analyse the quality of maps for ADAS attributes
+      - Developing metrics to analyse the quality of maps for ADAS attributes enabling map releases to be 100% compliant with quality standards
       - Stakeholder orientation to focus data-driven efforts
-      - Extraction of ADAS features from sensors using ML enabling quality checks without manual intervention
+      - Extraction of ADAS features from sensors using ML enabling quality checks without manual intervention saving 60% of the pipeline cost and 90% of the time delay for the automatic metrics
       - Designed a unified pipeline for metric creation that reduced the time to create a new metric from 6 months to 4 weeks
-      - Geospatial data science
+      - Geospatial data science from indexing, databases, operations and analysis
       
       MLOPS:
-      - Productivization of ML models in Databricks ( CV detection and classification )
-      - ETL Load Optimization for lidar data and images into delta lake
-      - Monitoring the performance and costs
+      - Productivization of ML models in Databricks (CV detection and classification) scaling to 10k+ jobs per day
+      - ETL Load Optimization for lidar data and images into indexed delta lake reducing the time to load the data 60%
+      - Monitoring the performance and costs from baseline to production alignign with VM reservations and cost targets
       - Performance optimization of the pipeline reducing the baseline cost by 80% using rust and cython based libraries and optimizing the code
 
       AI Agents:
@@ -77,8 +77,8 @@ work_experience:
     end_date: "2022-07-01"
     description: |
       Main projects:
-      - Sport analytics for first division football team
-      - Data science professor (internal training)
+      - Sport analytics for first division football team, video summary generation, player similarity detection, spotfire dashboards
+      - Data science professor (internal training) for data science and machine learning from basics data wrangling to pyspark machine learning models
       - Segmentation and classification of aerial drone imagery for defect detection
       - Time series forecasting
       - EDA and KPI visualizations in Spotfire for non-profit foundation
