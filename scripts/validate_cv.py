@@ -105,7 +105,7 @@ def validate_cv(cv_path):
         for idx, lang in enumerate(cv_data['programming_languages']):
             errors.extend(validate_required_fields(
                 lang,
-                ['name', 'level'],
+                ['name', 'proficiency'],
                 f'programming_languages[{idx}]'
             ))
             
