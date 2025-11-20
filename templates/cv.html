@@ -217,10 +217,10 @@
 </section>
 
 <!-- Programming Languages Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id="programming-languages-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h2 class="text-3xl font-bold mb-8 text-gray-800">Programming Languages</h2>
     
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <div id="programming-languages-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {% for lang in cv.programming_languages %}
         <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col items-center text-center">
             <!-- Language Icon -->
@@ -257,10 +257,10 @@
 </section>
 
 <!-- Frameworks Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id="frameworks-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h2 class="text-3xl font-bold mb-8 text-gray-800">Frameworks & Tools</h2>
     
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+    <div id="frameworks-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {% for framework in cv.frameworks %}
         <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex flex-col {% if framework.services %}items-start{% else %}items-center text-center{% endif %}">
             <!-- Framework Icon -->

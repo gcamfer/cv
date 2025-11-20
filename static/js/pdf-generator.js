@@ -65,6 +65,130 @@ async function generatePDF() {
             item.style.breakInside = 'avoid';
         });
         
+        // Force ultra-compact spacing with inline styles (override Tailwind)
+        // Target ALL sections and remove py-12 padding
+        const allSections = clone.querySelectorAll('section');
+        allSections.forEach(section => {
+            section.style.paddingTop = '0.2rem';
+            section.style.paddingBottom = '0.2rem';
+            section.style.marginTop = '0';
+            section.style.marginBottom = '0';
+            section.style.paddingLeft = '1rem';
+            section.style.paddingRight = '1rem';
+        });
+        
+        // Reduce h2 spacing aggressively
+        const allH2 = clone.querySelectorAll('h2');
+        allH2.forEach(h2 => {
+            h2.style.marginBottom = '0.2rem';
+            h2.style.marginTop = '0.2rem';
+        });
+        
+        // Ultra-compact About Me section
+        const aboutSection = clone.querySelector('#about-section');
+        if (aboutSection) {
+            aboutSection.style.paddingTop = '0.15rem';
+            aboutSection.style.paddingBottom = '0.1rem';
+            aboutSection.style.marginBottom = '0';
+            
+            const aboutMb6 = aboutSection.querySelector('.mb-6');
+            if (aboutMb6) {
+                aboutMb6.style.marginBottom = '0.15rem';
+                aboutMb6.style.paddingBottom = '0.1rem';
+            }
+            const aboutProse = aboutSection.querySelector('.prose');
+            if (aboutProse) {
+                aboutProse.style.marginBottom = '0.1rem';
+            }
+            
+            // Reduce paragraph spacing in About Me
+            const aboutParagraphs = aboutSection.querySelectorAll('p');
+            aboutParagraphs.forEach(p => {
+                p.style.marginTop = '0.15rem';
+                p.style.marginBottom = '0.15rem';
+            });
+        }
+        
+        // Compact work experience items (the white boxes)
+        const workExpItems = clone.querySelectorAll('.work-experience-item');
+        workExpItems.forEach(item => {
+            item.style.padding = '0.4rem';
+            item.style.marginBottom = '0.25rem';
+        });
+        
+        // Compact education items (the white boxes)
+        const educationItems = clone.querySelectorAll('.education-item');
+        educationItems.forEach(item => {
+            item.style.padding = '0.4rem';
+            item.style.marginBottom = '0.25rem';
+        });
+        
+        // Compact work experience spacing container
+        const spaceY8 = clone.querySelectorAll('.space-y-8');
+        spaceY8.forEach(container => {
+            container.style.gap = '0';
+            container.style.marginTop = '0';
+            const children = container.children;
+            for (let child of children) {
+                child.style.marginTop = '0';
+                child.style.marginBottom = '0.2rem';
+            }
+        });
+        
+        // Compact education spacing container
+        const spaceY6 = clone.querySelectorAll('.space-y-6');
+        spaceY6.forEach(container => {
+            container.style.gap = '0';
+            container.style.marginTop = '0';
+            const children = container.children;
+            for (let child of children) {
+                child.style.marginTop = '0';
+                child.style.marginBottom = '0.2rem';
+            }
+        });
+        
+        // Compact all max-w containers (these have px-4/px-6/px-8 classes)
+        const maxWContainers = clone.querySelectorAll('.max-w-7xl');
+        maxWContainers.forEach(container => {
+            container.style.paddingTop = '0.2rem';
+            container.style.paddingBottom = '0.2rem';
+            container.style.paddingLeft = '1rem';
+            container.style.paddingRight = '1rem';
+        });
+        
+        // Remove padding from all bg-white containers (work exp, education boxes)
+        // This targets the p-8 class which adds 2rem padding
+        const bgWhiteContainers = clone.querySelectorAll('.bg-white');
+        bgWhiteContainers.forEach(container => {
+            container.style.padding = '0.5rem';
+            container.style.marginBottom = '0.2rem';
+        });
+        
+        // Specifically target the About Me white box
+        const aboutWhiteBox = clone.querySelector('#about-section .bg-white');
+        if (aboutWhiteBox) {
+            aboutWhiteBox.style.padding = '0.5rem';
+            aboutWhiteBox.style.marginBottom = '0';
+        }
+        
+        // Target all elements with mb-6 class
+        const mb6Elements = clone.querySelectorAll('.mb-6');
+        mb6Elements.forEach(el => {
+            el.style.marginBottom = '0.2rem';
+        });
+        
+        // Target all elements with pb-4 class
+        const pb4Elements = clone.querySelectorAll('.pb-4');
+        pb4Elements.forEach(el => {
+            el.style.paddingBottom = '0.1rem';
+        });
+        
+        // Target all elements with mt-4 class
+        const mt4Elements = clone.querySelectorAll('.mt-4');
+        mt4Elements.forEach(el => {
+            el.style.marginTop = '0.2rem';
+        });
+        
         // Temporarily add clone to document for rendering
         clone.style.position = 'absolute';
         clone.style.left = '-9999px';
@@ -120,23 +244,57 @@ async function generatePDF() {
         const contentWidth = pageWidth - (2 * margin);
         const contentHeight = pageHeight - (2 * margin);
         
-        const imgHeight = (canvas.height * contentWidth) / canvas.width;
-        let heightLeft = imgHeight;
+        // Calculate dimensions
+        const imgWidth = canvas.width;
+        const imgHeight = canvas.height;
+        const ratio = imgWidth / contentWidth;
+        const pdfImgHeight = imgHeight / ratio;
         
+        // Calculate page height in pixels
+        const pageHeightInPixels = contentHeight * ratio;
+        
+        // Create PDF and slice canvas into pages to avoid duplication
         const pdf = new jsPDF('p', 'mm', 'a4');
-        let position = margin;
         
-        // Add image to PDF with margins
-        const imgData = canvas.toDataURL('image/jpeg', 0.95);
-        pdf.addImage(imgData, 'JPEG', margin, position, contentWidth, imgHeight);
-        heightLeft -= contentHeight;
+        // Create a temporary canvas for slicing
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = imgWidth;
+        const ctx = tempCanvas.getContext('2d');
         
-        // Add new pages if content is longer than one page
-        while (heightLeft > 0) {
-            position = margin - (imgHeight - heightLeft);
-            pdf.addPage();
-            pdf.addImage(imgData, 'JPEG', margin, position, contentWidth, imgHeight);
-            heightLeft -= contentHeight;
+        let srcY = 0;
+        let pageNum = 0;
+        
+        while (srcY < imgHeight) {
+            // Calculate height for this page
+            const sliceHeight = Math.min(pageHeightInPixels, imgHeight - srcY);
+            tempCanvas.height = sliceHeight;
+            
+            // Draw the slice from the main canvas
+            ctx.drawImage(
+                canvas,
+                0, srcY,              // Source x, y
+                imgWidth, sliceHeight, // Source width, height
+                0, 0,                 // Dest x, y
+                imgWidth, sliceHeight  // Dest width, height
+            );
+            
+            // Convert slice to image
+            const sliceImgData = tempCanvas.toDataURL('image/jpeg', 0.95);
+            
+            // Add page if not first
+            if (pageNum > 0) {
+                pdf.addPage();
+            }
+            
+            // Calculate height in mm for this slice
+            const sliceHeightMM = sliceHeight / ratio;
+            
+            // Add the slice to the PDF
+            pdf.addImage(sliceImgData, 'JPEG', margin, margin, contentWidth, sliceHeightMM);
+            
+            // Move to next slice
+            srcY += pageHeightInPixels;
+            pageNum++;
         }
         
         // Generate filename with current date

@@ -55,7 +55,9 @@ work_experience:
       
       MLOPS:
       - Productivization of ML models in Databricks (CV detection and classification) scaling to 10k+ jobs per day
+      - Dockerizing the ETL and inference environments for production ready deployments
       - ETL Load Optimization for lidar data and images into indexed delta lake reducing the time to load the data 60%
+      - ETL design for download and process aerial lidar from goverment agencies
       - Monitoring the performance and costs from baseline to production alignign with VM reservations and cost targets
       - Performance optimization of the pipeline reducing the baseline cost by 80% using rust and cython based libraries and optimizing the code
 
@@ -348,7 +350,7 @@ frameworks:
     
   - name: "Databricks"
     icon: "pics/frameworks/databricks.png"
-    years_experience: 2
+    years_experience: 3
     proficiency: "Professional"
     
   - name: "PySpark"

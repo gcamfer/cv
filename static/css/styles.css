@@ -102,12 +102,20 @@ html {
     margin-bottom: 0.25rem !important;
 }
 
+/* Override mb-8 class on all h2 titles */
+.pdf-mode h2.mb-8,
 .pdf-mode h2.text-3xl {
     font-size: 1.25rem !important;
-    margin-bottom: 0.75rem !important;
-    margin-top: 1rem !important;
+    margin-bottom: 0.3rem !important;
+    margin-top: 0.75rem !important;
     border-bottom: 2px solid #2563eb;
-    padding-bottom: 0.25rem;
+    padding-bottom: 0.2rem;
+}
+
+/* Specific overrides for each section */
+.pdf-mode section h2 {
+    margin-bottom: 0.3rem !important;
+    margin-top: 0.5rem !important;
 }
 
 .pdf-mode h3 {
@@ -115,11 +123,17 @@ html {
     margin-bottom: 0.25rem !important;
 }
 
-/* Compact sections */
+/* Compact sections - minimal spacing between major sections */
 .pdf-mode section {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
     margin-bottom: 0 !important;
+}
+
+/* Override py-12 class on all sections */
+.pdf-mode section.py-12 {
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
 }
 
 /* Remove shadows and borders in PDF */
@@ -139,11 +153,19 @@ html {
     margin-bottom: 0.5rem !important;
 }
 
-/* Work Experience - Compact List */
+/* Override space-y-8 in work experience container */
+.pdf-mode .space-y-8 > * {
+    margin-top: 0 !important;
+    margin-bottom: 0.3rem !important;
+}
+
+/* Work Experience - Compact List with minimal spacing */
 .pdf-mode .work-experience-item {
     page-break-inside: avoid !important;
-    margin-bottom: 0.75rem !important;
-    padding: 0.25rem 0 !important;
+    break-inside: avoid !important;
+    margin-bottom: 0.3rem !important;
+    padding: 0.2rem 0 !important;
+    border-bottom: 1px solid #e5e7eb !important;
 }
 
 .pdf-mode .work-experience-item h3 {
@@ -159,8 +181,8 @@ html {
 /* Education - Compact */
 .pdf-mode .education-item {
     page-break-inside: avoid !important;
-    margin-bottom: 0.75rem !important;
-    padding: 0.25rem 0 !important;
+    margin-bottom: 0.4rem !important;
+    padding: 0.2rem 0 !important;
 }
 
 /* Certifications - Convert to compact list */
@@ -193,78 +215,148 @@ html {
 
 .pdf-mode .certification-item span.bg-green-100,
 .pdf-mode .certification-item span.bg-gray-100 {
+    display: none !important;
+}
+
+/* Programming Languages - Single compact line in PDF */
+.pdf-mode #programming-languages-grid {
+    display: block !important;
+    font-size: 0.7rem !important;
+    line-height: 1.5 !important;
+    margin: 0.25rem 0 !important;
+    padding: 0 !important;
+}
+
+.pdf-mode #programming-languages-grid > div {
+    display: inline-block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+/* Hide icon containers */
+.pdf-mode #programming-languages-grid > div > div {
+    display: none !important;
+}
+
+.pdf-mode #programming-languages-grid img {
+    display: none !important;
+}
+
+/* Show language name inline */
+.pdf-mode #programming-languages-grid h3 {
+    display: inline !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    margin: 0 0.2rem 0 0 !important;
+}
+
+/* Show years inline */
+.pdf-mode #programming-languages-grid .text-sm {
+    display: inline !important;
     font-size: 0.65rem !important;
-    padding: 0.1rem 0.3rem !important;
+    margin: 0 !important;
 }
 
-/* Programming Languages - Compact Grid */
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-5 {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 0.3rem !important;
-    max-width: 90% !important;
-    margin: 0 auto !important;
-}
-
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-5 > div {
-    padding: 0.2rem 0.4rem !important;
-    text-align: center !important;
-    flex: 0 0 auto !important;
-    min-width: 60px !important;
-}
-
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-5 img {
+/* Hide proficiency badges */
+.pdf-mode #programming-languages-grid span.inline-block {
     display: none !important;
 }
 
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-5 h3 {
-    font-size: 0.7rem !important;
-    margin-bottom: 0.05rem !important;
+/* Add separator between languages */
+.pdf-mode #programming-languages-grid > div::after {
+    content: " • " !important;
+    color: #6b7280 !important;
+    font-weight: normal !important;
+    padding: 0 0.3rem !important;
 }
 
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-5 .text-sm {
-    font-size: 0.55rem !important;
+.pdf-mode #programming-languages-grid > div:last-child::after {
+    content: "" !important;
 }
 
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-5 span.inline-block {
-    font-size: 0.55rem !important;
-    padding: 0.1rem 0.25rem !important;
+/* Compact section spacing */
+.pdf-mode #programming-languages-section {
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
 }
 
-/* Frameworks - Compact Grid */
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-4.xl\\:grid-cols-5 {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 0.3rem !important;
-    max-width: 90% !important;
-    margin: 0 auto !important;
+.pdf-mode #programming-languages-section h2 {
+    margin-bottom: 0.3rem !important;
+    margin-top: 0 !important;
 }
 
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-4.xl\\:grid-cols-5 > div {
-    padding: 0.2rem 0.4rem !important;
-    text-align: center !important;
-    flex: 0 0 auto !important;
-    min-width: 70px !important;
+/* Frameworks - 6 Column Compact Grid in PDF */
+.pdf-mode #frameworks-grid {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 0.3rem 0.5rem !important;
+    font-size: 0.65rem !important;
+    line-height: 1.2 !important;
+    margin: 0.25rem 0 !important;
+    padding: 0 !important;
 }
 
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-4.xl\\:grid-cols-5 img {
+.pdf-mode #frameworks-grid > div {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    text-align: left !important;
+}
+
+.pdf-mode #frameworks-grid .w-16,
+.pdf-mode #frameworks-grid img,
+.pdf-mode #frameworks-grid .mb-3,
+.pdf-mode #frameworks-grid .mb-2 {
     display: none !important;
 }
 
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-4.xl\\:grid-cols-5 h3 {
+.pdf-mode #frameworks-grid h3 {
+    display: block !important;
     font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    margin: 0 0 0.1rem 0 !important;
+    line-height: 1.1 !important;
 }
 
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-4.xl\\:grid-cols-5 .text-sm,
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-4.xl\\:grid-cols-5 .text-xs {
-    font-size: 0.55rem !important;
+.pdf-mode #frameworks-grid .text-sm,
+.pdf-mode #frameworks-grid .text-xs {
+    display: block !important;
+    font-size: 0.6rem !important;
+    margin: 0 !important;
+    line-height: 1.1 !important;
+    color: #4b5563 !important;
 }
 
 /* Hide bullet list services */
-.pdf-mode .grid.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-4.xl\\:grid-cols-5 ul {
+.pdf-mode #frameworks-grid ul {
     display: none !important;
+}
+
+/* Hide proficiency badges to save space */
+.pdf-mode #frameworks-grid span.inline-block {
+    display: none !important;
+}
+
+/* No separators in grid layout */
+.pdf-mode #frameworks-grid > div::after {
+    content: "" !important;
+}
+
+/* Compact section spacing */
+.pdf-mode #frameworks-section {
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
+}
+
+.pdf-mode #frameworks-section h2 {
+    margin-bottom: 0.3rem !important;
+    margin-top: 0 !important;
 }
 
 /* Cloud & Azure Services - Ultra Compact */
@@ -304,14 +396,37 @@ html {
     display: none !important;
 }
 
-/* Technology badges - make smaller */
+/* Technology badges - single blue container in PDF */
 .pdf-mode .flex.flex-wrap.gap-2 {
-    gap: 0.25rem !important;
+    display: block !important;
+    background-color: #dbeafe !important;
+    padding: 0.3rem 0.5rem !important;
+    border-radius: 0.25rem !important;
+    margin-top: 0.3rem !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
 }
 
 .pdf-mode .bg-blue-100.text-blue-800 {
+    display: inline !important;
     font-size: 0.65rem !important;
-    padding: 0.1rem 0.4rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+    color: #1e40af !important;
+    border-radius: 0 !important;
+    font-weight: 600 !important;
+}
+
+/* Add separators between technologies */
+.pdf-mode .bg-blue-100.text-blue-800::after {
+    content: " • " !important;
+    color: #1e40af !important;
+    font-weight: normal !important;
+}
+
+.pdf-mode .bg-blue-100.text-blue-800:last-child::after {
+    content: "" !important;
 }
 
 /* Compact spacing for all text */
@@ -330,11 +445,20 @@ html {
 /* Make About Me more compact */
 .pdf-mode #about-section .prose {
     font-size: 0.8rem !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.2rem !important;
 }
 
 .pdf-mode #about-section .text-xl {
     font-size: 0.9rem !important;
+}
+
+/* Override mb-6 and pb-4 on total experience line */
+.pdf-mode #about-section .mb-6 {
+    margin-bottom: 0.3rem !important;
+}
+
+.pdf-mode #about-section .pb-4 {
+    padding-bottom: 0.2rem !important;
 }
 
 /* Languages in Header - Compact in PDF */
@@ -392,7 +516,8 @@ html {
 /* Work experience descriptions more compact */
 .pdf-mode .work-experience-item .whitespace-pre-line {
     font-size: 0.75rem !important;
-    line-height: 1.2 !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.2rem !important;
 }
 
 /* Hide date durations to save space */
@@ -402,7 +527,26 @@ html {
 
 /* Publications more compact */
 .pdf-mode #publications-section {
-    padding: 0.25rem 0 !important;
+    padding: 0.3rem 0 !important;
+}
+
+/* About Me section compact */
+.pdf-mode #about-section {
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.15rem !important;
+    margin-bottom: 0.2rem !important;
+}
+
+/* Certifications section compact */
+.pdf-mode #certifications-section {
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
+}
+
+/* Technical Skills section compact */
+.pdf-mode #technical-skills-section {
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
 }
 
 /* Page break control */
