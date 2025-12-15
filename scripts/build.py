@@ -6,10 +6,40 @@ Generates static HTML from YAML data and Jinja2 templates
 
 import yaml
 import shutil
+import os
+import sys
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
+
+# On macOS, help WeasyPrint find Homebrew-installed libraries
+if sys.platform == 'darwin':
+    # Try to find Homebrew prefix
+    brew_prefixs = [
+        '/opt/homebrew',  # Apple Silicon
+        '/usr/local',      # Intel Mac
+    ]
+    
+    for brew_prefix in brew_prefixs:
+        lib_path = os.path.join(brew_prefix, 'lib')
+        if os.path.exists(lib_path):
+            # Set DYLD_FALLBACK_LIBRARY_PATH (safer than DYLD_LIBRARY_PATH on newer macOS)
+            current_fallback = os.environ.get('DYLD_FALLBACK_LIBRARY_PATH', '')
+            if lib_path not in current_fallback:
+                os.environ['DYLD_FALLBACK_LIBRARY_PATH'] = f"{lib_path}:{current_fallback}" if current_fallback else lib_path
+            break
+
+# Try to import WeasyPrint, but don't fail if it's not available
+try:
+    from weasyprint import HTML
+    WEASYPRINT_AVAILABLE = True
+except (ImportError, OSError) as e:
+    WEASYPRINT_AVAILABLE = False
+    print(f"⚠️  WeasyPrint not available: {e}")
+    print("   PDF generation will be skipped.")
+    print("   If dependencies are installed, try setting DYLD_FALLBACK_LIBRARY_PATH:")
+    print("   export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib:$DYLD_FALLBACK_LIBRARY_PATH")
 
 
 class CVBuilder:
@@ -143,6 +173,43 @@ class CVBuilder:
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(html_content)
     
+    def generate_pdf(self, context):
+        """Generate PDF from PDF template using WeasyPrint"""
+        if not WEASYPRINT_AVAILABLE:
+            print("⏭️  Skipping PDF generation (WeasyPrint not available)")
+            print("   To enable PDF generation on macOS:")
+            print("   1. Install dependencies: brew install pango cairo gobject-introspection")
+            print("   2. Run with library path: DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib uv run python scripts/build.py")
+            print("   Or use the wrapper script: ./scripts/build.sh")
+            return
+        
+        print("📄 Generating PDF (this may take a moment)...")
+        
+        try:
+            # Render PDF template to HTML string
+            template = self.jinja_env.get_template('cv_pdf.html')
+            html_content = template.render(**context)
+            
+            # Generate PDF with optimized settings
+            pdf_filename = "guillermo-caminero-fernandez.pdf"
+            pdf_path = self.output_dir / pdf_filename
+            
+            # Use base_url pointing to project root for resolving relative paths
+            # Disable external resource fetching to speed things up
+            html_obj = HTML(
+                string=html_content,
+                base_url=str(self.project_root)
+            )
+            
+            # Write PDF - WeasyPrint will handle optimization automatically
+            html_obj.write_pdf(pdf_path)
+            
+            print(f"✅ PDF generated: {pdf_path}")
+        except Exception as e:
+            print(f"❌ Error generating PDF: {e}")
+            print("   PDF generation failed, but HTML build will continue.")
+            # Don't fail the entire build if PDF generation fails
+    
     def build(self):
         """Main build process"""
         print("\n" + "="*60)
@@ -170,6 +237,9 @@ class CVBuilder:
         
         # Render portfolio page
         self.render_template('portfolio.html', context, 'portfolio.html')
+        
+        # Generate PDF
+        self.generate_pdf(context)
         
         print("\n" + "="*60)
         print("✅ Build complete!")

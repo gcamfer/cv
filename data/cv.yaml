@@ -34,10 +34,10 @@ about:
 languages:
   - name: "Spanish"
     flag: "flags/SP.png"
-    level: 5  # Native
+    proficiency: "Native"
   - name: "English"
     flag: "flags/GB.png"
-    level: 3  # Professional working proficiency
+    proficiency: "Professional"
 
 work_experience:
   - company: "TomTom"
@@ -52,6 +52,7 @@ work_experience:
       - Extraction of ADAS features from sensors using ML enabling quality checks without manual intervention saving 60% of the pipeline cost and 90% of the time delay for the automatic metrics
       - Designed a unified pipeline for metric creation that reduced the time to create a new metric from 6 months to 4 weeks
       - Geospatial data science from indexing, databases, operations and analysis
+      - Software architectural designs for scaling the metrics pipeline and fallback mechanisms
       
       MLOPS:
       - Productivization of ML models in Databricks (CV detection and classification) scaling to 10k+ jobs per day

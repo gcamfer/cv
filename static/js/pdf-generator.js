@@ -329,6 +329,231 @@ async function generatePDF() {
     }
 }
 
+// Word Document Generator
+document.addEventListener('DOMContentLoaded', function() {
+    const downloadWordBtn = document.getElementById('downloadWord');
+    
+    if (downloadWordBtn) {
+        downloadWordBtn.addEventListener('click', generateWord);
+    }
+});
+
+async function generateWord() {
+    const button = document.getElementById('downloadWord');
+    const originalText = button.innerHTML;
+    
+    // Show loading state
+    button.disabled = true;
+    button.innerHTML = `
+        <svg class="inline w-5 h-5 mr-2 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Generating Word...
+    `;
+    
+    try {
+        const content = document.getElementById('cv-content');
+        
+        if (!content) {
+            alert('CV content not found. Please ensure you are on the CV page.');
+            return;
+        }
+        
+        // Clone and apply same compact styling as PDF
+        const clone = content.cloneNode(true);
+        clone.classList.add('pdf-mode');
+        
+        // Remove no-print elements
+        const noPrintElements = clone.querySelectorAll('.no-print');
+        noPrintElements.forEach(el => el.remove());
+        
+        // Apply all the same compact spacing as PDF (reuse the same logic)
+        // Force ultra-compact spacing with inline styles (override Tailwind)
+        const allSections = clone.querySelectorAll('section');
+        allSections.forEach(section => {
+            section.style.paddingTop = '0.2rem';
+            section.style.paddingBottom = '0.2rem';
+            section.style.marginTop = '0';
+            section.style.marginBottom = '0';
+            section.style.paddingLeft = '1rem';
+            section.style.paddingRight = '1rem';
+        });
+        
+        // Reduce h2 spacing aggressively
+        const allH2 = clone.querySelectorAll('h2');
+        allH2.forEach(h2 => {
+            h2.style.marginBottom = '0.2rem';
+            h2.style.marginTop = '0.2rem';
+        });
+        
+        // Ultra-compact About Me section
+        const aboutSection = clone.querySelector('#about-section');
+        if (aboutSection) {
+            aboutSection.style.paddingTop = '0.15rem';
+            aboutSection.style.paddingBottom = '0.1rem';
+            aboutSection.style.marginBottom = '0';
+            
+            const aboutMb6 = aboutSection.querySelector('.mb-6');
+            if (aboutMb6) {
+                aboutMb6.style.marginBottom = '0.15rem';
+                aboutMb6.style.paddingBottom = '0.1rem';
+            }
+            const aboutProse = aboutSection.querySelector('.prose');
+            if (aboutProse) {
+                aboutProse.style.marginBottom = '0.1rem';
+            }
+            
+            const aboutParagraphs = aboutSection.querySelectorAll('p');
+            aboutParagraphs.forEach(p => {
+                p.style.marginTop = '0.15rem';
+                p.style.marginBottom = '0.15rem';
+            });
+        }
+        
+        // Compact work experience items
+        const workExpItems = clone.querySelectorAll('.work-experience-item');
+        workExpItems.forEach(item => {
+            item.style.padding = '0.4rem';
+            item.style.marginBottom = '0.25rem';
+        });
+        
+        // Compact education items
+        const educationItems = clone.querySelectorAll('.education-item');
+        educationItems.forEach(item => {
+            item.style.padding = '0.4rem';
+            item.style.marginBottom = '0.25rem';
+        });
+        
+        // Compact spacing containers
+        const spaceY8 = clone.querySelectorAll('.space-y-8');
+        spaceY8.forEach(container => {
+            container.style.gap = '0';
+            container.style.marginTop = '0';
+            const children = container.children;
+            for (let child of children) {
+                child.style.marginTop = '0';
+                child.style.marginBottom = '0.2rem';
+            }
+        });
+        
+        const spaceY6 = clone.querySelectorAll('.space-y-6');
+        spaceY6.forEach(container => {
+            container.style.gap = '0';
+            container.style.marginTop = '0';
+            const children = container.children;
+            for (let child of children) {
+                child.style.marginTop = '0';
+                child.style.marginBottom = '0.2rem';
+            }
+        });
+        
+        // Compact all max-w containers
+        const maxWContainers = clone.querySelectorAll('.max-w-7xl');
+        maxWContainers.forEach(container => {
+            container.style.paddingTop = '0.2rem';
+            container.style.paddingBottom = '0.2rem';
+            container.style.paddingLeft = '1rem';
+            container.style.paddingRight = '1rem';
+        });
+        
+        // Remove padding from all bg-white containers
+        const bgWhiteContainers = clone.querySelectorAll('.bg-white');
+        bgWhiteContainers.forEach(container => {
+            container.style.padding = '0.5rem';
+            container.style.marginBottom = '0.2rem';
+        });
+        
+        const aboutWhiteBox = clone.querySelector('#about-section .bg-white');
+        if (aboutWhiteBox) {
+            aboutWhiteBox.style.padding = '0.5rem';
+            aboutWhiteBox.style.marginBottom = '0';
+        }
+        
+        // Target utility classes
+        const mb6Elements = clone.querySelectorAll('.mb-6');
+        mb6Elements.forEach(el => {
+            el.style.marginBottom = '0.2rem';
+        });
+        
+        const pb4Elements = clone.querySelectorAll('.pb-4');
+        pb4Elements.forEach(el => {
+            el.style.paddingBottom = '0.1rem';
+        });
+        
+        const mt4Elements = clone.querySelectorAll('.mt-4');
+        mt4Elements.forEach(el => {
+            el.style.marginTop = '0.2rem';
+        });
+        
+        // Create a complete HTML document for Word
+        const htmlContent = `
+<!DOCTYPE html>
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'>
+<head>
+    <meta charset='utf-8'>
+    <title>Guillermo Caminero - CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            color: #000;
+            background: white;
+            margin: 1cm;
+        }
+        h1 { font-size: 24pt; margin-bottom: 0.3rem; color: #1e40af; }
+        h2 { font-size: 16pt; margin-bottom: 0.2rem; margin-top: 0.5rem; border-bottom: 2px solid #1e40af; padding-bottom: 0.1rem; }
+        h3 { font-size: 12pt; font-weight: bold; margin-bottom: 0.1rem; }
+        p { margin: 0.2rem 0; font-size: 11pt; }
+        section { margin-bottom: 0.3rem; }
+        .work-item, .education-item { 
+            margin-bottom: 0.3rem; 
+            padding: 0.4rem;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+${clone.innerHTML}
+</body>
+</html>`;
+        
+        // Create blob and download
+        const blob = new Blob([htmlContent], { type: 'application/vnd.ms-word' });
+        
+        // Generate filename with current date
+        const today = new Date();
+        const dateStr = today.toISOString().split('T')[0];
+        const filename = `Guillermo_Caminero_CV_${dateStr}.doc`;
+        
+        // Download
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = filename;
+        link.click();
+        URL.revokeObjectURL(link.href);
+        
+        // Show success
+        button.innerHTML = `
+            <svg class="inline w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Word Downloaded!
+        `;
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.disabled = false;
+        }, 2000);
+        
+    } catch (error) {
+        console.error('Error generating Word:', error);
+        alert('Error generating Word document. Please try again.');
+        button.innerHTML = originalText;
+        button.disabled = false;
+    }
+}
+
 // Add print functionality as fallback
 function printCV() {
     window.print();
