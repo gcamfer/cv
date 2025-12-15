@@ -46,3 +46,5 @@ Thumbs.db
 # Local testing
 test_output/
 
+# Generated PDF
+docs/guillermo-caminero-fernandez.pdf

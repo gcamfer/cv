@@ -62,6 +62,7 @@ class CVBuilder:
         self.jinja_env.filters['format_date'] = self.format_date
         self.jinja_env.filters['calculate_years'] = self.calculate_years
         self.jinja_env.filters['is_active_cert'] = self.is_active_cert
+        self.jinja_env.filters['format_job_description'] = self.format_job_description
     
     def load_cv_data(self):
         """Load CV data from YAML"""
@@ -134,6 +135,26 @@ class CVBuilder:
             expiry = expiry_date
         
         return expiry > datetime.now()
+    
+    def format_job_description(self, description):
+        """Format job description with bold section headers only"""
+        if not description:
+            return ""
+        
+        lines = description.split('\n')
+        formatted_lines = []
+        
+        for line in lines:
+            stripped = line.strip()
+            # Check if this is a section header (ends with colon and is not a bullet point)
+            if stripped.endswith(':') and not stripped.startswith('-'):
+                # Make it bold, preserve original spacing
+                formatted_lines.append(line.replace(stripped, f'<strong>{stripped}</strong>'))
+            else:
+                # Keep original line
+                formatted_lines.append(line)
+        
+        return '\n'.join(formatted_lines)
     
     def prepare_output_dir(self):
         """Create/clean output directory"""

@@ -256,6 +256,11 @@
             color: #374151;
         }
         
+        .job-description strong {
+            font-weight: bold;
+            color: #1f2937;
+        }
+        
         .job-description ul, .edu-highlights ul {
             list-style: none;
             padding-left: 0;
@@ -537,7 +542,7 @@
                         </div>
                     </div>
                     <div class="job-description">
-                        {{ job.description | replace('\n', ' ') | replace('- ', '• ') | safe }}
+                        {{ job.description | format_job_description | replace('\n', ' ') | replace('- ', '• ') | safe }}
                     </div>
                     {% if job.technologies %}
                     <div class="tech-tags">
